@@ -22,7 +22,7 @@ export default function Sonderbestellung() {
         >
           <p>Was ist Sonderholz?</p>
         </AccordionSummary>
-        <p>
+        <p style={{ color: "grey" }}>
           Für besondere Anwendungen bieten wir Sonderhölzer in 50 cm und 1 m
           Scheitlängen an. Geliefert wird in Raummetern (RM), meist Buche.
           Andere Holzarten sind auf Anfrage je nach Verfügbarkeit möglich.

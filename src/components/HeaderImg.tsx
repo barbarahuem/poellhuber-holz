@@ -31,7 +31,7 @@ export default function HeaderImg({
         <div className="absolute inset-0 flex items-center justify-center">
           <h3
             className="uppercase"
-            style={{ color: "white", fontSize: "1.7rem", textAlign: "center" }}
+            style={{ color: "white", fontSize: "1.5rem", textAlign: "center" }}
           >
             {content}
           </h3>

@@ -7,7 +7,7 @@
   --color-secondary: #ad9068;
   --color-light-secondary: #d2c3ad;
   --color-stroke-light: #ede3d5;
-  --font: #3a3b3c;
+  --font: #3f4041;
   --font-grey: #7b7b7b;
 }
 
@@ -56,5 +56,5 @@ h3 {
 }
 p {
   color: var(--font);
-  font-size: small;
+  font-size: 1rem;
 }

@@ -20,7 +20,7 @@ export default function QuestionAccordion() {
             Raummeter (RM) vs. Schüttraummeter (SRM) – Was ist der Unterschied?
           </p>
         </AccordionSummary>
-        <p>
+        <p style={{ color: "grey", textAlign: "center" }}>
           Raummeter (RM): <br />
           Ein Raummeter ist ein Kubikmeter sauber gestapeltes Holz – inklusive
           der Luftzwischenräume zwischen den Scheiten.
@@ -40,7 +40,7 @@ export default function QuestionAccordion() {
         >
           <p>Was ist Sonderholz?</p>
         </AccordionSummary>
-        <p>
+        <p style={{ color: "grey", textAlign: "center" }}>
           Für besondere Anwendungen bieten wir Sonderhölzer in 50 cm und 1 m
           Scheitlängen an. Geliefert wird in Raummetern (RM), meist Buche.
           Andere Holzarten sind auf Anfrage je nach Verfügbarkeit möglich.

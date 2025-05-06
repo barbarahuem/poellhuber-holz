@@ -33,7 +33,7 @@ export default function ProductCard({ product }: { product?: any }) {
           />
         </div>
         <CardContent>
-          <p style={{ textAlign: "left", fontSize: "1rem" }}>
+          <p style={{ textAlign: "left", fontSize: "1rem", fontWeight: "bold" }}>
             {product.name}, {product.length}
           </p>
           <p style={{ textAlign: "left", color: "grey" }}>

@@ -20,43 +20,43 @@ export default function Navbar() {
         <div className="flex-1 flex justify-center space-x-7 text-font">
           <Link
             href="/"
-            className={`hover:text-secondary ${pathname === '/' ? 'text-secondary' : ''}`}
+            className={`${pathname === "/" ? "text-secondary" : "hover:text-primary "}`}
           >
             Startseite
           </Link>
           <Link
             href="/brennholz"
-            className={`hover:text-secondary ${pathname === '/brennholz' ? 'text-secondary' : ''}`}
+            className={`${pathname.includes("brennholz") ? "text-secondary" : "hover:text-primary "}`}
           >
             Brennholz
           </Link>
           <Link
             href="/pellets"
-            className={`hover:text-secondary ${pathname === '/pellets' ? 'text-secondary' : ''}`}
+            className={`${pathname.includes("pellets") ? "text-secondary" : "hover:text-primary "}`}
           >
             Pellets
           </Link>
           <Link
             href="/sonderbestellung"
-            className={`hover:text-secondary ${pathname === '/sonderbestellung' ? 'text-secondary' : ''}`}
+            className={`${pathname === "/sonderbestellung" ? "text-secondary" : "hover:text-primary "}`}
           >
             Sonderbestellung
           </Link>
           <Link
             href="/baggerungen"
-            className={`hover:text-secondary ${pathname === '/baggerungen' ? 'text-secondary' : ''}`}
+            className={`${pathname === "/baggerungen" ? "text-secondary" : "hover:text-primary "}`}
           >
             Baggerungen
           </Link>
           <Link
             href="/lieferung"
-            className={`hover:text-secondary ${pathname === '/lieferung' ? 'text-secondary' : ''}`}
+            className={`hover:text-secondary ${pathname === "/lieferung" ? "text-secondary" : ""}`}
           >
             Lieferung
           </Link>
           <Link
             href="/kontakt"
-            className={`hover:text-secondary ${pathname === '/kontakt' ? 'text-secondary' : ''}`}
+            className={`hover:text-secondary ${pathname === "/kontakt" ? "text-secondary" : ""}`}
           >
             Kontakt
           </Link>

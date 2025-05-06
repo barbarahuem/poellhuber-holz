@@ -1,5 +1,3 @@
 export default function Lieferung() {
-  return (
-    <h1>Lieferung</h1>
-  );
+  return <h1>Lieferung</h1>;
 }

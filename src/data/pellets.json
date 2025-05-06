@@ -1,0 +1,11 @@
+[
+  {
+    "id": 5,
+    "image": "/assets/brennholz.png",
+    "name": "Pellets",
+    "price": "89,99",
+    "unit": "kg",
+    "length": "Pellets",
+    "category": "pellets"
+  }
+]

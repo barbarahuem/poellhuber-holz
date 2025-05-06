@@ -1,5 +1,3 @@
 export default function Baggerungen() {
-  return (
-    <h1>Baggerungen</h1>
-  );
+  return <h1>Baggerungen</h1>;
 }

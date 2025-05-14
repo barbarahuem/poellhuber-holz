@@ -2,6 +2,9 @@ import Image from "next/image";
 import brennholzIMG from "../assets/brennholz.png";
 import pelletsIMG from "../assets/brennholz.png";
 import sonderIMG from "../assets/brennholz.png";
+import brennholzIcon from "../assets/brennholzIcon.png";
+import pelletsIcon from "../assets/pelletsIcon.png";
+import sonderholzIcon from "../assets/sonderholzIcon.png";
 
 import OrderSteps from "@/components/OrderSteps";
 
@@ -26,6 +29,13 @@ export default function Home() {
 
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2 md:grid-cols-3">
         <div>
+          <Image
+            src={brennholzIcon}
+            alt="Brennholz Icon"
+            width={90}
+            height={20}
+            className="justify-center m-auto mb-2"
+          />
           <h2>Brennholz</h2>
           <p>
             Lose geschüttetes oder auf Paletten geliefertes Buchenholz, Trocken
@@ -33,6 +43,13 @@ export default function Home() {
           </p>
         </div>
         <div>
+          <Image
+            src={pelletsIcon}
+            alt="Pellets Icon"
+            width={90}
+            height={20}
+            className="justify-center m-auto mb-2"
+          />
           <h2>Pellets</h2>
           <p>
             Hochwertige Holzpellets für effizientes Heizen Lieferung in
@@ -40,6 +57,13 @@ export default function Home() {
           </p>
         </div>
         <div>
+          <Image
+            src={sonderholzIcon}
+            alt="Sonderholz Icon"
+            width={90}
+            height={20}
+            className="justify-center m-auto mb-3"
+          />
           <h2>Sonderbestellung</h2>
           <p>
             Verschiedene Holzsorten auf Anfrage Spezialmaße und individuelle

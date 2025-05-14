@@ -13,7 +13,7 @@ export default function Brennholz() {
         Paletten verpackt.
       </p>
       <ProductContainer products={products} />
-      <OrderSteps hasText={false} />
+      <OrderSteps hasText={false} hasInfoSteps={true} />
     </div>
   );
 }

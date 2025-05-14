@@ -13,7 +13,7 @@ export default function Pellets() {
         in handlichen Einheiten oder großeren Mengen direkt zu Ihnen nach Hause.
       </p>
       <ProductContainer products={products} />
-      <OrderSteps hasText={false} />
+      <OrderSteps hasText={false} hasInfoSteps={true} />
     </div>
   );
 }

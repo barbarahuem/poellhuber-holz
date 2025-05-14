@@ -77,11 +77,17 @@ export default function ContactForm() {
         )}
       />
 
-      <Button type="submit" variant="contained" color="primary" style={{ width: "50%", margin: "0 auto" }}>
+      <Button
+        type="submit"
+        variant="contained"
+        color="primary"
+        style={{ width: "50%", height: "50px", margin: "0 auto" }}
+      >
         Anfragen
       </Button>
       <p style={{ textAlign: "center", fontSize: "0.8rem", color: "grey" }}>
-        Nach Erhalt der Anfrage kümmern wir uns um Ihr Anliegen und melden uns mit einem Angebot zurück.
+        Nach Erhalt der Anfrage kümmern wir uns um Ihr Anliegen und melden uns
+        mit einem Angebot zurück.
       </p>
     </form>
   );

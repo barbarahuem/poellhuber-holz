@@ -15,13 +15,11 @@ export default function Navbar() {
       </div>
       <div className="flex items-center p-3 h-15">
         <Link href="/" className="flex items-center absolute left-5">
-          {
-            pathname === "/" ? (<Image src="/wood.png" alt="Logo" width={35} height={35}/>) 
-            : 
-            (
-              <Image src="/logo.png" alt="Logo" width={70} height={35}/>
-            )
-          }
+          {pathname === "/" ? (
+            <Image src="/wood.png" alt="Logo" width={35} height={35} />
+          ) : (
+            <Image src="/logo.png" alt="Logo" width={70} height={35} />
+          )}
         </Link>
         <div className="flex-1 flex justify-center space-x-7 text-font">
           <Link

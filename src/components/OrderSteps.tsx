@@ -17,11 +17,18 @@ export default function OrderSteps({
         <div className="grid gap-2">
           <h3 className="text-left">So funktioniert die Lieferung</h3>
           <ul className="list-disc text-left ml-3">
-            <li>Kostenfreie Lieferung ab 10 SRM innerhalb unserer definierten Zonen</li>
             <li>
-  Kostenfreie Lieferung ab 10 Meter Holz bis Zone 4 (Zonen in 25 km Abständen)
+              Kostenfreie Lieferung ab 10 SRM innerhalb unserer definierten
+              Zonen
             </li>
-            <li>Flexible Versandberechnung nach Postleitzahlen oder per Entfernungsmessung</li>
+            <li>
+              Kostenfreie Lieferung ab 10 Meter Holz bis Zone 4 (Zonen in 25 km
+              Abständen)
+            </li>
+            <li>
+              Flexible Versandberechnung nach Postleitzahlen oder per
+              Entfernungsmessung
+            </li>
           </ul>
         </div>
       )}

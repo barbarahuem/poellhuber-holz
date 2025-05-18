@@ -6,7 +6,7 @@ import { useForm, Controller } from "react-hook-form";
 
 import { useState } from "react";
 
-export default function ContactForm() {
+export default function ContactForm({ hasText = true }: { hasText?: boolean }) {
   const { control, handleSubmit } = useForm();
   const [formData, setFormData] = useState(null);
 
@@ -17,6 +17,16 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+      {hasText && (
+        <>
+          <h3 className="text-left mt-1">Anfragen</h3>
+          <p className="font-left mr-34">
+            Sie erreichen uns telefonisch unter +43 650 9506002 oder mit
+            nachstehendem E-Mail Formular:
+          </p>
+        </>
+      )}
+
       <Controller
         name="email"
         control={control}
@@ -85,10 +95,12 @@ export default function ContactForm() {
       >
         Anfragen
       </Button>
-      <p style={{ textAlign: "center", fontSize: "0.8rem", color: "grey" }}>
-        Nach Erhalt der Anfrage kümmern wir uns um Ihr Anliegen und melden uns
-        mit einem Angebot zurück.
-      </p>
+      {hasText && (
+        <p style={{ textAlign: "center", fontSize: "0.8rem", color: "grey" }}>
+          Nach Erhalt der Anfrage kümmern wir uns um Ihr Anliegen und melden uns
+          mit einem Angebot zurück.
+        </p>
+      )}
     </form>
   );
 }

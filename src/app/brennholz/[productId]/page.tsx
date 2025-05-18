@@ -54,7 +54,6 @@ export default function ProductPage({
         <li>Lieferung: Lose geschüttet oder sauber auf Paletten gestapelt</li>
       </ul>
       <div>
-        <h3 className="text-left mb-3">Anfragen</h3>
         <ContactForm />
       </div>
       <OrderSteps hasText={false} hasInfoSteps={true} />

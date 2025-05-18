@@ -53,7 +53,6 @@ export default function ProductPage({
         <li>Lieferung: Lose im Silowagen oder sauber abgepackt auf Paletten</li>
       </ul>
       <div>
-        <h3 className="text-left mb-3">Anfragen</h3>
         <ContactForm />
       </div>
       <OrderSteps hasText={false} hasInfoSteps={true} />

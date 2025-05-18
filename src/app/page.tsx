@@ -129,12 +129,19 @@ export default function Home() {
               />
               <div className="absolute inset-0 z-20 flex items-center justify-center">
                 <h3 className="uppercase" style={{ color: "white" }}>
-                  Sonderholz
+                  Sonderbestellung
                 </h3>
               </div>
             </div>
           </Link>
         </div>
+      </div>
+      <div>
+        <h2>Baggerungen & Forstdienst</h2>
+        <p>
+          Wir erledigen auch Erdarbeiten, Böschungspflege und Forsteinsätze rund
+          ums Haus und im Wald. Einfach telefonisch anfragen!
+        </p>
       </div>
 
       <OrderSteps hasText={true} />

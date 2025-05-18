@@ -1,6 +1,6 @@
 import OrderSteps from "@/components/OrderSteps";
 import ProductContainer from "@/components/products/ProductContainer";
-import products from "@/data/brennholz.json";
+import {products} from "@/data/brennholz";
 
 export default function Brennholz() {
   return (

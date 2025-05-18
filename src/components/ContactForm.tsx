@@ -1,18 +1,25 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { TextField, Button } from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
 
-import { useState } from "react";
+type ContactFormData = {
+  email: string;
+  name: string;
+  surname: string;
+  plz: string;
+  city: string;
+  message: string;
+};
 
 export default function ContactForm({ hasText = true }: { hasText?: boolean }) {
-  const { control, handleSubmit } = useForm();
-  const [formData, setFormData] = useState(null);
+  const { control, handleSubmit } = useForm<ContactFormData>();
+  const [formData, setFormData] = useState<ContactFormData | null>(null);
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: ContactFormData) => {
     setFormData(data);
-    console.log(data);
+    console.log(formData); // TODO: change
   };
 
   return (
@@ -40,7 +47,7 @@ export default function ContactForm({ hasText = true }: { hasText?: boolean }) {
           name="name"
           control={control}
           defaultValue=""
-          render={({ field }: { field: any }) => (
+          render={({ field }) => (
             <TextField {...field} label="Vorname" fullWidth required />
           )}
         />
@@ -48,7 +55,7 @@ export default function ContactForm({ hasText = true }: { hasText?: boolean }) {
           name="surname"
           control={control}
           defaultValue=""
-          render={({ field }: { field: any }) => (
+          render={({ field }) => (
             <TextField {...field} label="Nachname" fullWidth required />
           )}
         />
@@ -58,7 +65,7 @@ export default function ContactForm({ hasText = true }: { hasText?: boolean }) {
           name="plz"
           control={control}
           defaultValue=""
-          render={({ field }: { field: any }) => (
+          render={({ field }) => (
             <TextField {...field} label="PLZ" fullWidth required />
           )}
         />
@@ -66,7 +73,7 @@ export default function ContactForm({ hasText = true }: { hasText?: boolean }) {
           name="city"
           control={control}
           defaultValue=""
-          render={({ field }: { field: any }) => (
+          render={({ field }) => (
             <TextField {...field} label="Ort" fullWidth required />
           )}
         />

@@ -1,8 +1,9 @@
+import { Product } from "@/types/product";
 import { Card, CardContent } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ProductCard({ product }: { product?: any }) {
+export default function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/${product.category}/${product.id}`}

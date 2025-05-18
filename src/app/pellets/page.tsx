@@ -1,7 +1,7 @@
 import OrderSteps from "@/components/OrderSteps";
 import ProductContainer from "@/components/products/ProductContainer";
 
-import products from "@/data/pellets.json";
+import { products } from "@/data/pellets";
 
 export default function Pellets() {
   return (

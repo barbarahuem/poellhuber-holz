@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import products from "@/data/pellets.json";
+import { products } from "@/data/pellets";
 import QuantitySelector from "@/components/QuantitySelect";
 import ContactForm from "@/components/ContactForm";
 import OrderSteps from "@/components/OrderSteps";

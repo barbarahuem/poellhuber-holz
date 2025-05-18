@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import products from "@/data/brennholz.json";
+import { products } from "@/data/brennholz";
 import ContactForm from "@/components/ContactForm";
 import QuantitySelector from "@/components/QuantitySelect";
 import OrderSteps from "@/components/OrderSteps";

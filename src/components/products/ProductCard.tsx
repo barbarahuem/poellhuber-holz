@@ -1,7 +1,4 @@
-import {
-  Card,
-  CardContent,
-} from "@mui/material";
+import { Card, CardContent } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 

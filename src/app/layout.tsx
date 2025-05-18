@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { Wrapper } from "./wrapper";
-import QuestionAccordion from "@/components/questionsAccordion";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Pöllhuber Brennholz",
   description: "Familienbetrieb für Brennholz und Pellets",
+  icons: {
+    icon: "/wood.png",
+  },
 };
 
 export default function RootLayout({

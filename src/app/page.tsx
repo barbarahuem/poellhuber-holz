@@ -1,101 +1,177 @@
 import Image from "next/image";
+import brennholzIMG from "../assets/brennholz.png";
+import pelletsIMG from "../assets/brennholz.png";
+import sonderIMG from "../assets/brennholz.png";
+import brennholzIcon from "../assets/brennholzIcon.png";
+import pelletsIcon from "../assets/pelletsIcon.png";
+import sonderholzIcon from "../assets/sonderholzIcon.png";
+
+import OrderSteps from "@/components/OrderSteps";
+
+import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="flex flex-col gap-9">
+      <div className="grid gap-2">
+        <h1 className="text-secondary">
+          Ihr Familienbetrieb für hochwertiges Brennholz aus heimischen Wäldern!
+        </h1>
+        <p>
+          Wir liefern erstklassiges, nachhaltig gewonnenes Brennholz sowie
+          Pellets und Sonderbestellungen direkt zu Ihnen nach Hause. Unser Holz
+          stammt aus heimischen Wäldern und wird mit viel Liebe und Sorgfalt
+          verarbeitet. Als Familienbetrieb legen wir großen Wert auf Qualität,
+          Regionalität und faire Preise.
+        </p>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 md:grid-cols-3">
+        <div>
+          <Image
+            src={brennholzIcon}
+            alt="Brennholz Icon"
+            width={90}
+            height={20}
+            className="justify-center m-auto mb-2"
+          />
+          <h2>Brennholz</h2>
+          <p>
+            Lose geschüttetes oder auf Paletten geliefertes Buchenholz, Trocken
+            oder frisch in verschiedenen Längen (25 cm, 33 cm, 50 cm, 1 m)
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div>
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src={pelletsIcon}
+            alt="Pellets Icon"
+            width={90}
+            height={20}
+            className="justify-center m-auto mb-2"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+          <h2>Pellets</h2>
+          <p>
+            Hochwertige Holzpellets für effizientes Heizen Lieferung in
+            handlichen Einheiten
+          </p>
+        </div>
+        <div>
           <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+            src={sonderholzIcon}
+            alt="Sonderholz Icon"
+            width={90}
+            height={20}
+            className="justify-center m-auto mb-3"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <h2>Sonderbestellung</h2>
+          <p>
+            Verschiedene Holzsorten auf Anfrage Spezialmaße und individuelle
+            Bestellungen möglich
+          </p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
+        {/* Left column - full height image */}
+        <Link
+          href="/brennholz"
+          className="hover:opacity-95 hover:scale-102 transition-transform duration-300"
         >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <div className="relative h-20 md:h-50 lg:h-64">
+            <div className="absolute inset-0 bg-black opacity-30 rounded-xl z-10"></div>
+            <Image
+              src={brennholzIMG}
+              alt="Brennholz"
+              className="rounded-xl shadow-lg h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 z-20 flex items-center justify-center">
+              <h3 className="uppercase" style={{ color: "white" }}>
+                Brennholz
+              </h3>
+            </div>
+          </div>
+        </Link>
+
+        {/* Right column - two images stacked */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
+          {/* Top image */}
+          <Link
+            href="/pellets"
+            className="hover:opacity-95 hover:scale-102 transition-transform duration-300"
+          >
+            <div className="relative h-20 lg:h-30">
+              <div className="absolute inset-0 bg-black opacity-30 rounded-xl z-10"></div>
+              <Image
+                src={pelletsIMG}
+                alt="Pellets"
+                className="rounded-xl shadow-lg h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 z-20 flex items-center justify-center">
+                <h3 className="uppercase" style={{ color: "white" }}>
+                  Pellets
+                </h3>
+              </div>
+            </div>
+          </Link>
+
+          {/* Bottom image */}
+          <Link
+            href="/sonderbestellung"
+            className="hover:opacity-95 hover:scale-102 transition-transform duration-300"
+          >
+            <div className="relative h-20 lg:h-30">
+              <div className="absolute inset-0 bg-black opacity-30 rounded-xl z-10"></div>
+              <Image
+                src={sonderIMG}
+                alt="Sonderholz"
+                className="rounded-xl shadow-lg h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 z-20 flex items-center justify-center">
+                <h3 className="uppercase" style={{ color: "white" }}>
+                  Sonderbestellung
+                </h3>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </div>
+      <div>
+        <h2>Baggerungen & Forstdienst</h2>
+        <p>
+          Wir erledigen auch Erdarbeiten, Böschungspflege und Forsteinsätze rund
+          ums Haus und im Wald. Einfach telefonisch anfragen!
+        </p>
+      </div>
+
+      <OrderSteps hasText={true} />
+
+      <div className="grid gap-4 text-center">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <LocalShippingOutlinedIcon color="secondary" sx={{ fontSize: 80 }} />
+        </div>
+        <h2>Unser Versand – fair und transparent</h2>
+        <p>
+          Ihr Holz wird entweder auf Paletten oder lose geschüttet mit LKW oder
+          Anhänger geliefert. <br />
+          Unsere{" "}
+          <Link
+            href="/lieferung"
+            style={{ color: "#ad9068", textDecoration: "underline" }}
+          >
+            Videos und Bilder
+          </Link>{" "}
+          zeigen Ihnen, wie die Lieferung abläuft und welche Verpackungsoptionen
+          zur Verfügung stehen. <br />
+          Weitere Informationen zu Lieferung können hier entnommen werden.
+        </p>
+      </div>
     </div>
   );
 }

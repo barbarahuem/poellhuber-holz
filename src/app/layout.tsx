@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Providers } from "./providers";
-import QuestionAccordion from "@/components/questionsAccordion";
+
+import { Wrapper } from "./wrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Pöllhuber Brennholz",
   description: "Familienbetrieb für Brennholz und Pellets",
+  icons: {
+    icon: "/wood.png",
+  },
 };
 
 export default function RootLayout({
@@ -29,19 +30,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Providers>
-          <Navbar />
-          {children}
-          <hr
-            className="m-auto mb-10 mt-10 justify-center max-w-3xl"
-            style={{ borderColor: "var(--color-stroke-light)", borderWidth: "1px" }}
-          />
-          <h3 className="text-center">Häufige Fragen</h3>
-          <div className="m-auto mt-5 justify-center max-w-3xl">
-            <QuestionAccordion />
-          </div>
-          <Footer />
-        </Providers>
+        <Wrapper>
+          <main className="flex flex-col items-center m-auto text-center justify-center p-10 max-w-4xl">
+            {children}
+          </main>
+        </Wrapper>
       </body>
     </html>
   );

@@ -7,7 +7,8 @@
   --color-secondary: #ad9068;
   --color-light-secondary: #d2c3ad;
   --color-stroke-light: #ede3d5;
-  --font: #3a3b3c;
+  --font: #3f4041;
+  --font-grey: #7b7b7b;
 }
 
 @theme inline {
@@ -15,6 +16,8 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--color-main);
   --color-secondary: var(--color-secondary);
+  --color-front: var(--font);
+  --color-grey: var(--font-grey);
   --color-stroke: var(--color-stroke-light);
   --color-light-secondary: var(--color-light-secondary);
   --font-sans: var(--font-geist-sans);
@@ -46,12 +49,16 @@ h1 {
   font-size: 1.5rem;
 }
 h2 {
-  font-size: 1.15rem;
+  font-size: 1.3rem;
 }
 h3 {
   font-size: 1.15rem;
 }
+h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
 p {
   color: var(--font);
-  font-size: small;
+  font-size: 1rem;
 }

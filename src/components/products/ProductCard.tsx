@@ -1,14 +1,48 @@
-export default function ProductCard({ product }: { product: any }) {
-    return (
-        <div className="flex flex-col items-center justify-center w-full p-4 bg-white border border-gray-200 rounded-lg shadow-md">
-        <img
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@mui/material";
+import Image from "next/image";
+import Link from "next/link";
+
+export default function ProductCard({ product }: { product?: any }) {
+  return (
+    <Link
+      href={`/${product.category}/${product.id}`}
+      className="hover:opacity-95 hover:scale-102 transition-transform duration-300"
+    >
+      <Card
+        sx={{
+          maxWidth: 345,
+          maxHeight: 200,
+          borderRadius: "1rem",
+          boxShadow: "1px 3px 3px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <div className="relative h-20 md:h-20 lg:h-30">
+          <Image
             src={product.image}
             alt={product.name}
-            className="w-full h-48 object-cover mb-4 rounded-lg"
-        />
-        <h2 className="text-xl font-semibold text-gray-800">{product.name}</h2>
-        <p className="text-gray-600">{product.description}</p>
-        <span className="mt-2 text-lg font-bold text-gray-800">{product.price} €</span>
+            width={345}
+            height={100}
+            className="h-full w-full object-cover"
+          />
         </div>
-    );
-    }
+        <CardContent>
+          <p
+            style={{ textAlign: "left", fontSize: "1rem", fontWeight: "bold" }}
+          >
+            {product.name}, {product.length}
+          </p>
+          <p style={{ textAlign: "left", color: "grey" }}>
+            {product.price} € je {product.unit}
+          </p>
+        </CardContent>
+      </Card>
+    </Link>
+  );
+}

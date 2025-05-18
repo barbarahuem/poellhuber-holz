@@ -5,14 +5,16 @@ import ContactForm from "@/components/ContactForm";
 import QuantitySelector from "@/components/QuantitySelect";
 import OrderSteps from "@/components/OrderSteps";
 
-export default function ProductPage({
-  params,
-}: {
-  params: { productId: string };
-}) {
-  const product = products.find((p) => p.id === Number(params.productId));
+type Params = Promise<{ productId: string }>;
 
-  if (!product) return notFound();
+export default async function ProductPage({ params }: { params: Params }) {
+  const { productId } = await params;
+
+  const product = products.find((p) => p.id === Number(productId));
+
+  if (!product) {
+    notFound();
+  }
 
   return (
     <div className="grid gap-10">
@@ -21,12 +23,12 @@ export default function ProductPage({
           src={product.image}
           alt="Produktbild"
           width={300}
-          height={30}
+          height={300}
           className="rounded-xl"
         />
         <div
-          style={{ textAlign: "left" }}
           className="flex flex-col justify-between"
+          style={{ textAlign: "left" }}
         >
           <div>
             <h1>
@@ -45,6 +47,7 @@ export default function ProductPage({
           </div>
         </div>
       </div>
+
       <ul className="list-disc text-left ml-3">
         <li>
           Holzart: Buche – bekannt für langanhaltende Glut & hohe Wärmeabgabe
@@ -53,9 +56,8 @@ export default function ProductPage({
         <li>Trocknung: Luftgetrocknet oder frisch erhältlich</li>
         <li>Lieferung: Lose geschüttet oder sauber auf Paletten gestapelt</li>
       </ul>
-      <div>
-        <ContactForm />
-      </div>
+
+      <ContactForm />
       <OrderSteps hasText={false} hasInfoSteps={true} />
     </div>
   );

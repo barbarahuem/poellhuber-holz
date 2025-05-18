@@ -5,14 +5,16 @@ import QuantitySelector from "@/components/QuantitySelect";
 import ContactForm from "@/components/ContactForm";
 import OrderSteps from "@/components/OrderSteps";
 
-export default function ProductPage({
-  params,
-}: {
-  params: { productId: string };
-}) {
-  const product = products.find((p) => p.id === Number(params.productId));
+type Params = Promise<{ productId: string }>;
 
-  if (!product) return notFound();
+export default async function ProductPage({ params }: { params: Params }) {
+  const { productId } = await params;
+
+  const product = products.find((p) => p.id === Number(productId));
+
+  if (!product) {
+    notFound();
+  }
 
   return (
     <div className="grid gap-10">
@@ -21,7 +23,7 @@ export default function ProductPage({
           src={product.image}
           alt="Produktbild"
           width={300}
-          height={30}
+          height={300}
           className="rounded-xl"
         />
         <div

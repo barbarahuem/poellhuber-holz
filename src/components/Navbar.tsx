@@ -25,15 +25,12 @@ export default function Navbar() {
 
   return (
     <nav className="relative">
-      {/* Top Bar */}
       <div className="bg-secondary flex justify-end p-3 space-x-6 text-sm hidden md:flex">
         <p style={{ color: "white" }}>+43 650 9506002</p>
         <p style={{ color: "white" }}>poellhuber.holz@gmail.com</p>
       </div>
 
-      {/* Navbar */}
       <div className="relative h-16 flex items-center justify-center">
-        {/* Logo - absolute, kein Einfluss auf Layout */}
         <Link href="/" className="absolute left-4 top-1/2 -translate-y-1/2">
           <Image
             src={pathname === "/" ? "/wood.png" : "/logo.png"}
@@ -43,10 +40,8 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Navigation Links - zentriert */}
-        <div className="hidden md:flex space-x-7 text-font">
+        <div className="max-[850px]:hidden flex space-x-7 text-font">
           {navLinks.map((link) => {
-            // Active, wenn exact match oder (für Unterseiten) includes, außer Startseite ("/")
             const isActive =
               pathname === link.href ||
               (link.href !== "/" && pathname.startsWith(link.href));
@@ -64,21 +59,19 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Hamburger Menu */}
-        <div className="md:hidden absolute right-4 top-1/2 -translate-y-1/2">
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 max-[850px]:block hidden">
           <button onClick={toggleMenu}>
             {menuOpen ? (
-              <CloseIcon fontSize="large" />
+              <CloseIcon fontSize="large" className="cursor-pointer" />
             ) : (
-              <MenuIcon fontSize="large" />
+              <MenuIcon fontSize="large" className="cursor-pointer" />
             )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden flex flex-col bg-white p-4 space-y-4 shadow-lg">
+        <div className="flex flex-col bg-white p-4 space-y-4 shadow-lg max-[850px]:flex hidden ">
           {navLinks.map((link) => {
             const isActive =
               pathname === link.href ||
@@ -88,7 +81,9 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className={`${isActive ? "text-secondary" : "hover:text-primary"}`}
+                className={`${
+                  isActive ? "text-secondary" : "hover:text-primary"
+                }`}
               >
                 {link.label}
               </Link>

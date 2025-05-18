@@ -1,6 +1,4 @@
-import OrderSteps from "@/components/OrderSteps";
-import ProductContainer from "@/components/products/ProductContainer";
-import products from "@/data/brennholz.json";
+
 import { Accordion, AccordionSummary } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ContactForm from "@/components/ContactForm";

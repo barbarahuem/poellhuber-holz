@@ -24,14 +24,17 @@ export default function Navbar() {
   ];
 
   return (
-    <nav>
+    <nav className="relative">
+      {/* Top Bar */}
       <div className="bg-secondary flex justify-end p-3 space-x-6 text-sm hidden md:flex">
         <p style={{ color: "white" }}>+43 650 9506002</p>
         <p style={{ color: "white" }}>poellhuber.holz@gmail.com</p>
       </div>
 
-      <div className="flex items-center justify-between p-3 h-16">
-        <Link href="/" className="flex items-center">
+      {/* Navbar */}
+      <div className="relative h-16 flex items-center justify-center">
+        {/* Logo - absolute, kein Einfluss auf Layout */}
+        <Link href="/" className="absolute left-4 top-1/2 -translate-y-1/2">
           <Image
             src={pathname === "/" ? "/wood.png" : "/logo.png"}
             alt="Logo"
@@ -40,23 +43,29 @@ export default function Navbar() {
           />
         </Link>
 
-        <div className="hidden md:flex flex-1 justify-center space-x-7 text-font">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`${
-                pathname === link.href || pathname.includes(link.href)
-                  ? "text-secondary"
-                  : "hover:text-primary"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+        {/* Navigation Links - zentriert */}
+        <div className="hidden md:flex space-x-7 text-font">
+          {navLinks.map((link) => {
+            // Active, wenn exact match oder (für Unterseiten) includes, außer Startseite ("/")
+            const isActive =
+              pathname === link.href ||
+              (link.href !== "/" && pathname.startsWith(link.href));
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`${
+                  isActive ? "text-secondary" : "hover:text-primary"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
 
-        <div className="md:hidden">
+        {/* Hamburger Menu */}
+        <div className="md:hidden absolute right-4 top-1/2 -translate-y-1/2">
           <button onClick={toggleMenu}>
             {menuOpen ? (
               <CloseIcon fontSize="large" />
@@ -67,22 +76,24 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden flex flex-col bg-white p-4 space-y-4 shadow-lg">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className={`${
-                pathname === link.href || pathname.includes(link.href)
-                  ? "text-secondary"
-                  : "hover:text-primary"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive =
+              pathname === link.href ||
+              (link.href !== "/" && pathname.startsWith(link.href));
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className={`${isActive ? "text-secondary" : "hover:text-primary"}`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
       )}
     </nav>

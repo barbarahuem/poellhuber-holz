@@ -26,8 +26,8 @@ export default function Navbar() {
   return (
     <nav>
       <div className="bg-secondary flex justify-end p-3 space-x-6 text-sm hidden md:flex">
-        <p style={{color: "white"}}>+43 650 9506002</p>
-        <p style={{color: "white"}}>poellhuber.holz@gmail.com</p>
+        <p style={{ color: "white" }}>+43 650 9506002</p>
+        <p style={{ color: "white" }}>poellhuber.holz@gmail.com</p>
       </div>
 
       <div className="flex items-center justify-between p-3 h-16">

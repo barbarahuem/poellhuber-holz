@@ -9,8 +9,8 @@ export default function Kontakt() {
         <div>
           <div className="text-left mb-6">
             <h4>Standort</h4>
-            <p>Klaus 146</p>
-            <p>4564 Klaus</p>
+            <p>Klaus an der Pyhrnbahn 146</p>
+            <p>4564 Klaus an der Pyhrnbahn</p>
           </div>
 
           <div className="text-left mb-6">

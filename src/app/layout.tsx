@@ -17,9 +17,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Pöllhuber Brennholz",
   description: "Familienbetrieb für Brennholz und Pellets",
-  icons: {
-    icon: "/wood.png",
-  },
 };
 
 export default function RootLayout({

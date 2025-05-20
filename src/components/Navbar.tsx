@@ -32,12 +32,7 @@ export default function Navbar() {
 
       <div className="relative h-16 flex items-center justify-center">
         <Link href="/" className="absolute left-4 top-1/2 -translate-y-1/2">
-          <Image
-            src={pathname === "/" ? "/wood.png" : "/logo.png"}
-            alt="Logo"
-            width={pathname === "/" ? 35 : 70}
-            height={35}
-          />
+          <Image src="/logo.png" alt="Logo" width={70} height={35} />
         </Link>
 
         <div className="max-[850px]:hidden flex space-x-7 text-font">

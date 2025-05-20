@@ -2,7 +2,6 @@
 
 import { ThemeProvider } from "@emotion/react";
 import AppTheme from "./appTheme";
-
 import HeaderImg from "@/components/HeaderImg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";

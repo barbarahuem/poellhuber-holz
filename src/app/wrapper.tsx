@@ -6,10 +6,10 @@ import HeaderImg from "@/components/HeaderImg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-import homeIMG from "../assets/homeIMG.png";
-import brennholzIMG from "../assets/brennholz.png";
-import pelletsIMG from "../assets/brennholz.png";
-import sonderIMG from "../assets/brennholz.png";
+import homeIMG from "../assets/homeIMG.webp";
+import brennholzIMG from "../assets/brennholz.webp";
+import pelletsIMG from "../assets/brennholz.webp";
+import sonderIMG from "../assets/brennholz.webp";
 import { usePathname } from "next/navigation";
 import QuestionAccordion from "@/components/QuestionAccordion";
 

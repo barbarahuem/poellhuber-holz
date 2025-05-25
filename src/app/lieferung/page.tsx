@@ -1,7 +1,7 @@
 import Image from "next/image";
-import lieferungImg from "@/assets/IMG_3629.png";
-import produktionImg from "@/assets/IMG_0987.png";
-import holzImg from "@/assets/IMG_8410 2.png";
+import lieferungImg from "@/assets/IMG_3629.webp";
+import produktionImg from "@/assets/IMG_0987.webp";
+import holzImg from "@/assets/IMG_8410 2.webp";
 import OrderSteps from "@/components/OrderSteps";
 
 export default function Lieferung() {

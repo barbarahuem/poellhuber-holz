@@ -1,7 +1,7 @@
 import Image from "next/image";
-import brennholzIMG from "../assets/brennholz.png";
-import pelletsIMG from "../assets/brennholz.png";
-import sonderIMG from "../assets/brennholz.png";
+import brennholzIMG from "../assets/brennholz.webp";
+import pelletsIMG from "../assets/brennholz.webp";
+import sonderIMG from "../assets/brennholz.webp";
 import brennholzIcon from "../assets/brennholzIcon.png";
 import pelletsIcon from "../assets/pelletsIcon.png";
 import sonderholzIcon from "../assets/sonderholzIcon.png";
@@ -82,7 +82,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-black opacity-30 rounded-xl z-10"></div>
             <Image
               src={brennholzIMG}
-              alt="Brennholz"
+              alt="Bild von Brennholz"
               className="rounded-xl shadow-lg h-full w-full object-cover"
             />
             <div className="absolute inset-0 z-20 flex items-center justify-center">
@@ -104,7 +104,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-black opacity-30 rounded-xl z-10"></div>
               <Image
                 src={pelletsIMG}
-                alt="Pellets"
+                alt="Bild von Pellets"
                 className="rounded-xl shadow-lg h-full w-full object-cover"
               />
               <div className="absolute inset-0 z-20 flex items-center justify-center">
@@ -124,7 +124,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-black opacity-30 rounded-xl z-10"></div>
               <Image
                 src={sonderIMG}
-                alt="Sonderholz"
+                alt="Bild von Sonderholz"
                 className="rounded-xl shadow-lg h-full w-full object-cover"
               />
               <div className="absolute inset-0 z-20 flex items-center justify-center">

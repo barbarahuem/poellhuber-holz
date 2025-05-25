@@ -51,26 +51,26 @@ export default function OrderSteps({
           So funktionierts:
         </p>
         <div className="flex flex-col md:flex-row gap-2 items-center">
-          <div className="flex flex-col items-center gap-2 p-2 border-2 border-stroke rounded-xl h-full">
+          <div className="flex flex-col items-center gap-2 p-2 border-2 border-stroke rounded-xl h-full w-full">
             <EmailOutlinedIcon />
             <p style={{ color: "white" }}>Schicken Sie uns Ihre Anfrage</p>
           </div>
-          <ArrowForwardOutlinedIcon />
-          <div className="flex flex-col items-center gap-2 p-2 border-2 border-stroke rounded-xl h-full">
+          <ArrowForwardOutlinedIcon className="rotate-[90deg] md:rotate-none" />
+          <div className="flex flex-col items-center gap-2 p-2 border-2 border-stroke rounded-xl h-full w-full">
             <PhoneIcon />
             <p style={{ color: "white" }}>
               Wir melden uns mit einem Angebot zurück
             </p>
           </div>
-          <ArrowForwardOutlinedIcon />
-          <div className="flex flex-col items-center gap-2 p-2 border-2 border-stroke rounded-xl h-full">
+          <ArrowForwardOutlinedIcon className="rotate-[90deg] md:rotate-none" />
+          <div className="flex flex-col items-center gap-2 p-2 border-2 border-stroke rounded-xl h-full w-full">
             <CalendarMonthIcon />
             <p style={{ color: "white" }}>
               Gemeinsam wird ein Termin vereinbart
             </p>
           </div>
-          <ArrowForwardOutlinedIcon />
-          <div className="flex flex-col items-center gap-2 p-2 border-2 border-stroke rounded-xl h-full">
+          <ArrowForwardOutlinedIcon className="rotate-[90deg] md:rotate-none" />
+          <div className="flex flex-col items-center gap-2 p-2 border-2 border-stroke rounded-xl h-full w-full">
             <LocalShippingOutlinedIcon />
             <p style={{ color: "white" }}>
               Die Zustellung erfolgt termingerecht

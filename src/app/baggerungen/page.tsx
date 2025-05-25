@@ -1,4 +1,4 @@
-import baggerungIMG from "@/assets/IMG_2778 2.png";
+import baggerungIMG from "@/assets/IMG_2778 2.webp";
 import Image from "next/image";
 
 export default function Baggerungen() {

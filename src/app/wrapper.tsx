@@ -2,7 +2,6 @@
 
 import { ThemeProvider } from "@emotion/react";
 import AppTheme from "./appTheme";
-
 import HeaderImg from "@/components/HeaderImg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -12,7 +11,7 @@ import brennholzIMG from "../assets/brennholz.png";
 import pelletsIMG from "../assets/brennholz.png";
 import sonderIMG from "../assets/brennholz.png";
 import { usePathname } from "next/navigation";
-import QuestionAccordion from "@/components/questionsAccordion";
+import QuestionAccordion from "@/components/QuestionAccordion";
 
 export function Wrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();

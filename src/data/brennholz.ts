@@ -3,7 +3,7 @@ import { Product } from "@/types/product";
 export const products: Product[] = [
   {
     id: 1,
-    image: "/assets/brennholz.png",
+    image: "/brennholz.png",
     name: "Buche",
     price: "49,99",
     unit: "SRM",
@@ -12,7 +12,7 @@ export const products: Product[] = [
   },
   {
     id: 2,
-    image: "/assets/brennholz.png",
+    image: "/brennholz.png",
     name: "Buche",
     price: "59,99",
     unit: "SRM",
@@ -21,7 +21,7 @@ export const products: Product[] = [
   },
   {
     id: 3,
-    image: "/assets/brennholz.png",
+    image: "/brennholz.png",
     name: "Buche",
     price: "69,99",
     unit: "RM",
@@ -30,7 +30,7 @@ export const products: Product[] = [
   },
   {
     id: 4,
-    image: "/assets/brennholz.png",
+    image: "/brennholz.png",
     name: "Buche",
     price: "79,99",
     unit: "RM",

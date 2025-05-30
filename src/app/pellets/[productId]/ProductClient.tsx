@@ -33,7 +33,8 @@ export default function ProductClient({ product }: { product: Product }) {
               className="item-end"
               style={{ color: "grey", fontSize: "1.2rem" }}
             >
-              {product.price} € je {product.unit}
+              {product.price} € je {product.unit}{" "}
+              <span style={{ fontSize: "1rem" }}>exkl. Lieferkosten</span>
             </p>
             <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
           </div>
@@ -46,7 +47,7 @@ export default function ProductClient({ product }: { product: Product }) {
           Heizsysteme
         </li>
         <li>Trocknung: Technisch getrocknet für optimalen Heizwert</li>
-        <li>Lieferung: Lose im Silowagen oder sauber abgepackt auf Paletten</li>
+        <li>Lieferung: {product.deliveryType}</li>
       </ul>
       <div>
         <ContactForm product={product.name} quantity={quantity} />

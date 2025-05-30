@@ -33,7 +33,7 @@ export default function ProductCard({ product }: { product: Product }) {
             {product.name}, {product.length}
           </p>
           <p style={{ textAlign: "left", color: "grey" }}>
-            {product.price} € je {product.unit}
+            {product.price} € je {product.unit}, {product.deliveryType}
           </p>
         </CardContent>
       </Card>

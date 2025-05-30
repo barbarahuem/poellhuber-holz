@@ -9,14 +9,14 @@ export default function Baggerungen() {
         Forstdienstleistungen an. Ob im Garten, rund ums Haus oder im Wald — wir
         unterstützen schnell und zuverlässig.
       </p>
-      <p>Einfach telefonisch unter +43 650 9506002 anfragen.</p>
+      <p>Einfach telefonisch unter +436509506002 anfragen.</p>
       <div>
         <h3 className="text-left">Unsere Leistungen:</h3>
         <ul className="list-disc text-left ml-3">
           <li>Böschungspflege</li>
-          <li>Strapenerhaltung</li>
+          <li>Straßenerhaltung</li>
           <li>Biomasseernte und -räumung</li>
-          <li>Erdarbeiten</li>
+          <li>Mulcharbeiten</li>
         </ul>
       </div>
       <Image

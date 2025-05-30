@@ -15,23 +15,43 @@ type ContactFormData = {
   phone?: string;
   product?: string;
   quantity?: number;
+  deliveryType?: string;
 };
 
 type ContactFormProps = {
   hasText?: boolean;
   product?: string;
   quantity?: number;
+  deliveryType?: string;
 };
 
 export default function ContactForm({
   hasText = true,
   product,
   quantity,
+  deliveryType,
 }: ContactFormProps) {
-  const { control, handleSubmit, reset } = useForm<ContactFormData>();
+  const { control, handleSubmit, reset } = useForm<ContactFormData>({
+    defaultValues: {
+      email: "",
+      name: "",
+      surname: "",
+      plz: "",
+      city: "",
+      phone: "",
+      message: "",
+      product: product || "",
+      quantity: quantity || 1,
+      deliveryType: deliveryType || "",
+    },
+  });
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
+
+  const onFocus = () => {
+    if (isFinished) setIsFinished(false);
+  };
 
   const onSubmit = async (data: ContactFormData) => {
     setIsLoading(true);
@@ -89,7 +109,14 @@ export default function ContactForm({
         control={control}
         defaultValue=""
         render={({ field }) => (
-          <TextField {...field} label="Email" type="email" fullWidth required />
+          <TextField
+            {...field}
+            label="Email"
+            type="email"
+            fullWidth
+            required
+            onFocus={onFocus}
+          />
         )}
       />
       <div className="flex gap-4">
@@ -98,7 +125,13 @@ export default function ContactForm({
           control={control}
           defaultValue=""
           render={({ field }) => (
-            <TextField {...field} label="Vorname" fullWidth required />
+            <TextField
+              {...field}
+              label="Vorname"
+              fullWidth
+              required
+              onFocus={onFocus}
+            />
           )}
         />
         <Controller
@@ -106,7 +139,13 @@ export default function ContactForm({
           control={control}
           defaultValue=""
           render={({ field }) => (
-            <TextField {...field} label="Nachname" fullWidth required />
+            <TextField
+              {...field}
+              label="Nachname"
+              fullWidth
+              required
+              onFocus={onFocus}
+            />
           )}
         />
       </div>
@@ -117,6 +156,8 @@ export default function ContactForm({
           defaultValue=""
           rules={{
             required: "PLZ ist erforderlich",
+            minLength: 4,
+            maxLength: 4,
             pattern: {
               value: /^[0-9]+$/,
               message: "PLZ darf nur Zahlen enthalten",
@@ -130,6 +171,7 @@ export default function ContactForm({
               required
               error={!!error}
               helperText={error ? error.message : ""}
+              onFocus={onFocus}
             />
           )}
         />
@@ -152,6 +194,7 @@ export default function ContactForm({
               required
               error={!!error}
               helperText={error ? error.message : ""}
+              onFocus={onFocus}
             />
           )}
         />
@@ -161,6 +204,7 @@ export default function ContactForm({
         control={control}
         defaultValue=""
         rules={{
+          required: "Telefonnummer ist erforderlich",
           pattern: {
             value: /^[0-9+\s]*$/,
             message: "Nur Zahlen, + und Leerzeichen erlaubt",
@@ -169,10 +213,12 @@ export default function ContactForm({
         render={({ field, fieldState: { error } }) => (
           <TextField
             {...field}
-            label="Telefonnummer (optional)"
+            label="Telefonnummer"
             fullWidth
             error={!!error}
             helperText={error ? error.message : ""}
+            required
+            onFocus={onFocus}
           />
         )}
       />
@@ -187,7 +233,6 @@ export default function ContactForm({
             multiline
             rows={8}
             fullWidth
-            required
           />
         )}
       />

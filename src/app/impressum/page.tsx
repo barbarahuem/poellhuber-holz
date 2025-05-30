@@ -30,7 +30,7 @@ export default function ImpressumPage() {
       <p>
         <strong>Unternehmensgegenstand:</strong>
         <br />
-        Handel mit Holz und Holzbrennstoffen, Forstunternehmen
+        Verkauf von Holz und Holzbrennstoffen, Forstunternehmen
       </p>
 
       <p>

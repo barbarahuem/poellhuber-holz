@@ -7,8 +7,18 @@ export async function POST(request: Request) {
   const data = await request.json();
   console.log("Empfangene Formulardaten:", data);
 
-  const { email, name, surname, phone, plz, city, message, product, quantity } =
-    data;
+  const {
+    email,
+    name,
+    surname,
+    phone,
+    plz,
+    city,
+    message,
+    product,
+    quantity,
+    deliveryType,
+  } = data;
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -37,6 +47,7 @@ export async function POST(request: Request) {
           <p><strong>Menge:</strong> ${quantity} </p>`
             : ""
         }
+        <p><strong>Lieferoption:</strong> ${deliveryType}</p>
         <p><strong>Nachricht:</strong></p>
         <p>${message}</p>
       `,
@@ -58,6 +69,7 @@ export async function POST(request: Request) {
           <p><strong>Menge:</strong> ${quantity} </p>`
             : ""
         }
+        <p><strong>Lieferoption:</strong> ${deliveryType}</p>
         <p style="color: grey;"><strong>Nachricht:</strong></p>
         <p style="color: grey;">${message}</p>
                 

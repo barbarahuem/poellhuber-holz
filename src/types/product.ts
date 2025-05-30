@@ -6,4 +6,5 @@ export interface Product {
   length: string;
   price: string;
   unit: string;
+  deliveryType: string;
 }

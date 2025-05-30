@@ -28,9 +28,9 @@ export default function QuantitySelector({
         label="Menge"
         onChange={handleChange}
       >
-        <MenuItem value={1}>1</MenuItem>
-        <MenuItem value={2}>2</MenuItem>
-        <MenuItem value={3}>3</MenuItem>
+        <MenuItem value={1.8}>1,8</MenuItem>
+        <MenuItem value={3.6}>3,6</MenuItem>
+        <MenuItem value={5.4}>5,4</MenuItem>
       </Select>
     </FormControl>
   );

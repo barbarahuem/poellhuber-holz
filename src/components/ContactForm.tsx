@@ -34,7 +34,7 @@ export default function ContactForm({
   deliveryType,
   price,
 }: ContactFormProps) {
-  const { control, handleSubmit, reset, setValue } = useForm<ContactFormData>({
+  const { control, handleSubmit, setValue } = useForm<ContactFormData>({
     defaultValues: {
       email: "",
       name: "",

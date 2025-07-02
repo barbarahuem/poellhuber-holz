@@ -7,4 +7,5 @@ export interface Product {
   price: string;
   unit: string;
   deliveryType: string;
+  quantityOptions?: number[];
 }

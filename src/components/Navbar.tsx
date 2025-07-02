@@ -35,7 +35,7 @@ export default function Navbar() {
           <Image src="/logo.png" alt="Logo" width={70} height={35} />
         </Link>
 
-        <div className="max-[850px]:hidden flex space-x-7 text-font">
+        <div className="max-[900px]:hidden flex space-x-7 text-font">
           {navLinks.map((link) => {
             const isActive =
               pathname === link.href ||
@@ -54,7 +54,7 @@ export default function Navbar() {
           })}
         </div>
 
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 max-[850px]:block hidden">
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 max-[900px]:block hidden">
           <button onClick={toggleMenu}>
             {menuOpen ? (
               <CloseIcon fontSize="large" className="cursor-pointer" />
@@ -66,7 +66,7 @@ export default function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="flex flex-col bg-white p-4 space-y-4 shadow-lg max-[850px]:flex hidden ">
+        <div className="flex flex-col bg-white p-4 space-y-4 shadow-lg max-[900px]:flex hidden ">
           {navLinks.map((link) => {
             const isActive =
               pathname === link.href ||

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { TextField, Button, CircularProgress } from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
@@ -16,6 +16,7 @@ type ContactFormData = {
   product?: string;
   quantity?: number;
   deliveryType?: string;
+  price?: string;
 };
 
 type ContactFormProps = {
@@ -23,6 +24,7 @@ type ContactFormProps = {
   product?: string;
   quantity?: number;
   deliveryType?: string;
+  price?: string;
 };
 
 export default function ContactForm({
@@ -30,8 +32,9 @@ export default function ContactForm({
   product,
   quantity,
   deliveryType,
+  price,
 }: ContactFormProps) {
-  const { control, handleSubmit, reset } = useForm<ContactFormData>({
+  const { control, handleSubmit, reset, setValue } = useForm<ContactFormData>({
     defaultValues: {
       email: "",
       name: "",
@@ -43,19 +46,32 @@ export default function ContactForm({
       product: product || "",
       quantity: quantity || 1,
       deliveryType: deliveryType || "",
+      price: price || "",
     },
   });
+
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
 
+  useEffect(() => {
+    setValue("product", product || "");
+    setValue("quantity", quantity || 1);
+    setValue("deliveryType", deliveryType || "");
+    setValue("price", price || "");
+  }, [product, quantity, price, deliveryType, setValue]);
+
   const onFocus = () => {
-    if (isFinished) setIsFinished(false);
+    if (isFinished) {
+      window.location.reload();
+    }
   };
 
   const onSubmit = async (data: ContactFormData) => {
     setIsLoading(true);
+    setHasError(false);
     setIsFinished(false);
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -64,18 +80,16 @@ export default function ContactForm({
       });
 
       if (response.ok) {
-        reset();
         setHasError(false);
         setIsFinished(true);
       } else {
         setHasError(true);
-        setIsFinished(false);
       }
     } catch (error) {
+      setHasError(true);
       console.error("Fehler beim Senden:", error);
     } finally {
       setIsLoading(false);
-      setIsFinished(true);
     }
   };
 
@@ -90,24 +104,31 @@ export default function ContactForm({
           </p>
         </>
       )}
-
       <Controller
         name="product"
         control={control}
-        defaultValue={product || ""}
         render={({ field }) => <input type="hidden" {...field} />}
       />
       <Controller
         name="quantity"
         control={control}
-        defaultValue={quantity || 1}
+        render={({ field }) => <input type="hidden" {...field} />}
+      />
+      <Controller
+        name="deliveryType"
+        control={control}
+        render={({ field }) => <input type="hidden" {...field} />}
+      />
+      <Controller
+        name="price"
+        control={control}
         render={({ field }) => <input type="hidden" {...field} />}
       />
 
       <Controller
         name="email"
         control={control}
-        defaultValue=""
+        rules={{ required: true }}
         render={({ field }) => (
           <TextField
             {...field}
@@ -119,11 +140,11 @@ export default function ContactForm({
           />
         )}
       />
-      <div className="flex gap-4">
+      <div className="flex flex-col sm:flex-row gap-4">
         <Controller
           name="name"
           control={control}
-          defaultValue=""
+          rules={{ required: true }}
           render={({ field }) => (
             <TextField
               {...field}
@@ -137,7 +158,7 @@ export default function ContactForm({
         <Controller
           name="surname"
           control={control}
-          defaultValue=""
+          rules={{ required: true }}
           render={({ field }) => (
             <TextField
               {...field}
@@ -149,19 +170,13 @@ export default function ContactForm({
           )}
         />
       </div>
-      <div className="flex gap-4">
+      <div className="flex flex-col sm:flex-row gap-4">
         <Controller
           name="plz"
           control={control}
-          defaultValue=""
           rules={{
             required: "PLZ ist erforderlich",
-            minLength: 4,
-            maxLength: 4,
-            pattern: {
-              value: /^[0-9]+$/,
-              message: "PLZ darf nur Zahlen enthalten",
-            },
+            pattern: { value: /^\d{4}$/, message: "PLZ muss 4 Ziffern haben" },
           }}
           render={({ field, fieldState: { error } }) => (
             <TextField
@@ -170,7 +185,7 @@ export default function ContactForm({
               fullWidth
               required
               error={!!error}
-              helperText={error ? error.message : ""}
+              helperText={error?.message}
               onFocus={onFocus}
             />
           )}
@@ -178,14 +193,7 @@ export default function ContactForm({
         <Controller
           name="city"
           control={control}
-          defaultValue=""
-          rules={{
-            required: "Ort ist erforderlich",
-            pattern: {
-              value: /^[A-Za-zÄÖÜäöüß\s-]+$/,
-              message: "Muss ein valider Ort sein",
-            },
-          }}
+          rules={{ required: "Ort ist erforderlich" }}
           render={({ field, fieldState: { error } }) => (
             <TextField
               {...field}
@@ -193,7 +201,7 @@ export default function ContactForm({
               fullWidth
               required
               error={!!error}
-              helperText={error ? error.message : ""}
+              helperText={error?.message}
               onFocus={onFocus}
             />
           )}
@@ -202,22 +210,15 @@ export default function ContactForm({
       <Controller
         name="phone"
         control={control}
-        defaultValue=""
-        rules={{
-          required: "Telefonnummer ist erforderlich",
-          pattern: {
-            value: /^[0-9+\s]*$/,
-            message: "Nur Zahlen, + und Leerzeichen erlaubt",
-          },
-        }}
+        rules={{ required: "Telefonnummer ist erforderlich" }}
         render={({ field, fieldState: { error } }) => (
           <TextField
             {...field}
             label="Telefonnummer"
             fullWidth
-            error={!!error}
-            helperText={error ? error.message : ""}
             required
+            error={!!error}
+            helperText={error?.message}
             onFocus={onFocus}
           />
         )}
@@ -225,7 +226,6 @@ export default function ContactForm({
       <Controller
         name="message"
         control={control}
-        defaultValue=""
         render={({ field }) => (
           <TextField
             {...field}
@@ -233,29 +233,34 @@ export default function ContactForm({
             multiline
             rows={8}
             fullWidth
+            onFocus={onFocus}
           />
         )}
       />
+
       {hasError && (
-        <p style={{ color: "red" }}>
-          Fehler beim Senden der Email. Versuchen Sie es später noch einmal.
+        <p className="text-red-600">
+          Fehler beim Senden der Email. Versuchen Sie es später noch einmal oder
+          kontaktieren Sie uns telefonisch.
         </p>
       )}
       {isFinished && (
-        <>
-          <MailOutlineIcon style={{ fontSize: "3rem" }} className="m-auto" />
+        <div className="text-center">
+          <MailOutlineIcon sx={{ fontSize: "3rem", margin: "auto" }} />
           <p>
             Vielen Dank für Ihre Nachricht! Wir haben soeben eine
             Bestätigungs-E-Mail an Sie versendet und werden Ihre Anfrage so
             rasch wie möglich bearbeiten.
           </p>
-        </>
+        </div>
       )}
+
       <Button
         type="submit"
         variant="contained"
         color="primary"
-        style={{ width: "50%", height: "50px", margin: "0 auto" }}
+        disabled={isLoading}
+        sx={{ width: { xs: "100%", sm: "50%" }, height: "50px", mx: "auto" }}
       >
         {isLoading ? (
           <CircularProgress size={24} color="inherit" />
@@ -263,8 +268,9 @@ export default function ContactForm({
           "Anfragen"
         )}
       </Button>
+
       {hasText && (
-        <p style={{ textAlign: "center", fontSize: "0.8rem", color: "grey" }}>
+        <p className="text-center text-sm text-gray-500">
           Nach Erhalt der Anfrage kümmern wir uns um Ihr Anliegen und melden uns
           mit einem Angebot zurück.
         </p>

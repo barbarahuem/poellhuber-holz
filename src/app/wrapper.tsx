@@ -8,8 +8,8 @@ import Footer from "@/components/Footer";
 
 import homeIMG from "../assets/homeIMG.webp";
 import brennholzIMG from "../assets/brennholz.webp";
-import pelletsIMG from "../assets/brennholz.webp";
-import sonderIMG from "../assets/brennholz.webp";
+import pelletsIMG from "../assets/pellet.jpg";
+import sonderIMG from "../assets/sonderholz.jpg";
 import { usePathname } from "next/navigation";
 import QuestionAccordion from "@/components/QuestionAccordion";
 

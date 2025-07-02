@@ -7,11 +7,13 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 type QuantitySelectorProps = {
   quantity: number;
   setQuantity: (value: number) => void;
+  quantityOptions: number[];
 };
 
 export default function QuantitySelector({
   quantity,
   setQuantity,
+  quantityOptions,
 }: QuantitySelectorProps) {
   function handleChange(e: SelectChangeEvent) {
     const value = Number(e.target.value);
@@ -28,9 +30,11 @@ export default function QuantitySelector({
         label="Menge"
         onChange={handleChange}
       >
-        <MenuItem value={1.8}>1,8</MenuItem>
-        <MenuItem value={3.6}>3,6</MenuItem>
-        <MenuItem value={5.4}>5,4</MenuItem>
+        {quantityOptions.map((option) => (
+          <MenuItem key={option} value={option}>
+            {String(option).replace(".", ",")}
+          </MenuItem>
+        ))}
       </Select>
     </FormControl>
   );

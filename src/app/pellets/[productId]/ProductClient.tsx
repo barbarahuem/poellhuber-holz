@@ -8,11 +8,11 @@ import { Product } from "@/types/product";
 import { useState } from "react";
 
 export default function ProductClient({ product }: { product: Product }) {
-  const [quantity, setQuantity] = useState<number>(1);
+  const [quantity, setQuantity] = useState<number>(product.quantityOptions![0]);
 
   return (
     <div className="grid gap-10">
-      <div className="flex gap-5">
+      <div className="flex flex-col md:flex-row gap-5">
         <Image
           src={product.image}
           alt="Produktbild"
@@ -28,15 +28,25 @@ export default function ProductClient({ product }: { product: Product }) {
             <h1>{product.name}</h1>
             <p>Hochwertige Holzpellets für effizientes Heizen</p>
           </div>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col">
             <p
-              className="item-end"
-              style={{ color: "grey", fontSize: "1.2rem" }}
+              style={{ color: "grey", fontSize: "1.3rem" }}
+              className="mt-5 md:mt-0"
             >
-              {product.price} € je {product.unit}{" "}
-              <span style={{ fontSize: "1rem" }}>exkl. Lieferkosten</span>
+              {(Number(product.price) * quantity).toFixed(2).replace(".", ",")}{" "}
+              € <span style={{ fontSize: "1rem" }}>Gesamt</span>
             </p>
-            <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
+            <p
+              className="item-end mb-3"
+              style={{ color: "grey", fontSize: "0.7rem" }}
+            >
+              {product.price} € je {product.unit} exkl. Lieferkosten
+            </p>
+            <QuantitySelector
+              quantity={quantity}
+              setQuantity={setQuantity}
+              quantityOptions={product.quantityOptions!}
+            />
           </div>
         </div>
       </div>

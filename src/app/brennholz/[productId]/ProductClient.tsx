@@ -5,14 +5,20 @@ import ContactForm from "@/components/ContactForm";
 import QuantitySelector from "@/components/QuantitySelect";
 import OrderSteps from "@/components/OrderSteps";
 import { Product } from "@/types/product";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ProductPage({ product }: { product: Product }) {
-  const [quantity, setQuantity] = useState<number>(1);
+  const [quantity, setQuantity] = useState<number>(product.quantityOptions![0]);
+
+  useEffect(() => {
+    console.log(
+      quantity ? `Aktuelle Menge: ${quantity}` : "Keine Menge ausgewählt",
+    );
+  }, [quantity]);
 
   return (
     <div className="grid gap-10">
-      <div className="flex gap-5">
+      <div className="flex flex-col md:flex-row gap-5">
         <Image
           src={product.image}
           alt="Produktbild"
@@ -32,18 +38,25 @@ export default function ProductPage({ product }: { product: Product }) {
             <p>{product.deliveryType}</p>
           </div>
           <div className="flex flex-col">
-            <p style={{ color: "grey", fontSize: "1.2rem" }}>
-              {Number(product.price) * quantity} €{" "}
-              <span style={{ fontSize: "1rem" }}>Gesamt</span>
+            <p
+              style={{ color: "grey", fontSize: "1.3rem" }}
+              className="mt-5 md:mt-0"
+            >
+              {(Number(product.price) * quantity).toFixed(2).replace(".", ",")}{" "}
+              € <span style={{ fontSize: "1rem" }}>Gesamt</span>
             </p>
             <p
-              className="item-end mb-2"
+              className="item-end mb-3"
               style={{ color: "grey", fontSize: "0.7rem" }}
             >
               {product.price} € je {product.unit} exkl. Lieferkosten
             </p>
 
-            <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
+            <QuantitySelector
+              quantity={quantity}
+              setQuantity={setQuantity}
+              quantityOptions={product.quantityOptions!}
+            />
           </div>
         </div>
       </div>
@@ -58,9 +71,12 @@ export default function ProductPage({ product }: { product: Product }) {
       </ul>
       <div>
         <ContactForm
-          product={product.name}
+          product={product.name + ", " + product.length}
           quantity={quantity}
           deliveryType={product.deliveryType}
+          price={(Number(product.price) * quantity)
+            .toFixed(2)
+            .replace(".", ",")}
         />
       </div>
       <OrderSteps hasText={false} hasInfoSteps={true} />

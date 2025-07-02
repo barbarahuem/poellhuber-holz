@@ -18,6 +18,7 @@ export async function POST(request: Request) {
     product,
     quantity,
     deliveryType,
+    price,
   } = data;
 
   const transporter = nodemailer.createTransport({
@@ -43,13 +44,20 @@ export async function POST(request: Request) {
         <hr>
         ${
           product
-            ? `<p><strong>Produkt:</strong> ${product}</p>
-          <p><strong>Menge:</strong> ${quantity} </p>`
+            ? `
+          <h3>Produkt: ${product}</h3>
+          <p><strong>Lieferoption:</strong> ${deliveryType}</p>
+          <p><strong>Menge:</strong> ${quantity} </p>
+          <p><strong>Preis: ${price} €</strong></p>
+          <hr>
+          `
             : ""
         }
-        <p><strong>Lieferoption:</strong> ${deliveryType}</p>
-        <p><strong>Nachricht:</strong></p>
-        <p>${message}</p>
+        ${
+          message &&
+          `<p><strong>Nachricht:</strong></p>
+            <p>${message}</p>`
+        }
       `,
     });
 
@@ -65,14 +73,18 @@ export async function POST(request: Request) {
         <h2 style="color: grey;">Ihre Nachricht:</h2>
         ${
           product
-            ? `<p><strong>Produkt:</strong> ${product}</p>
-          <p><strong>Menge:</strong> ${quantity} </p>`
+            ? `
+          <h3>Produkt: ${product}</h3>
+          <p><strong>Lieferoption:</strong> ${deliveryType}</p>
+          <p><strong>Menge:</strong> ${quantity} </p>
+          <p><strong>Preis: ${price} €</strong></p>`
             : ""
         }
-        <p><strong>Lieferoption:</strong> ${deliveryType}</p>
-        <p style="color: grey;"><strong>Nachricht:</strong></p>
-        <p style="color: grey;">${message}</p>
-                
+        ${
+          message &&
+          `<p><strong>Nachricht:</strong></p>
+            <p>${message}</p>`
+        }         
       `,
     });
 

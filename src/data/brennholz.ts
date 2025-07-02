@@ -10,6 +10,7 @@ export const products: Product[] = [
     length: "25 cm",
     category: "brennholz",
     deliveryType: "auf Paletten (lose im Netz)",
+    quantityOptions: [1.8, 3.6, 5.4],
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ export const products: Product[] = [
     length: "33 cm",
     category: "brennholz",
     deliveryType: "auf Paletten (lose im Netz)",
+    quantityOptions: [1.8, 3.6, 5.4],
   },
   {
     id: 3,
@@ -30,6 +32,7 @@ export const products: Product[] = [
     length: "50 cm",
     category: "brennholz",
     deliveryType: "lose geschüttet",
+    quantityOptions: [3, 4, 5, 6, 7, 8, 9, 10],
   },
   {
     id: 4,
@@ -40,7 +43,8 @@ export const products: Product[] = [
     length: "1 m",
     category: "brennholz",
     deliveryType: "lose geschüttet",
-  }, // 3 RM min - maximum egal 10
+    quantityOptions: [3, 4, 5, 6, 7, 8, 9, 10],
+  },
 
   {
     id: 5,
@@ -51,6 +55,7 @@ export const products: Product[] = [
     length: "25 cm",
     category: "brennholz",
     deliveryType: "lose geschüttet",
+    quantityOptions: [3, 4, 5, 6, 7, 8, 9, 10],
   },
   {
     id: 6,
@@ -61,8 +66,6 @@ export const products: Product[] = [
     length: "33 cm",
     category: "brennholz",
     deliveryType: "lose geschüttet",
+    quantityOptions: [3, 4, 5, 6, 7, 8, 9, 10],
   },
-
-  // 3 SRM mind, maximum egal, pro Meter alles möglich, 33cm, 25cm
-  //
 ];

@@ -2,9 +2,22 @@ import Image from "next/image";
 import lieferungImg from "@/assets/IMG_3629.webp";
 import produktionImg from "@/assets/IMG_0987.webp";
 import holzImg from "@/assets/IMG_8410 2.webp";
+import lieferungImg1 from "@/assets/palette-lieferung-1.jpeg";
+import lieferungImg2 from "@/assets/palette-lieferung-2.jpeg";
+import lieferungImg3 from "@/assets/palette-lieferung-3.jpeg";
+import lieferungImg4 from "@/assets/palette-lieferung-4.jpeg";
 import OrderSteps from "@/components/OrderSteps";
 
 export default function Lieferung() {
+  const imageList = [
+    lieferungImg,
+    produktionImg,
+    holzImg,
+    lieferungImg1,
+    lieferungImg2,
+    lieferungImg3,
+    lieferungImg4,
+  ];
   return (
     <div className="flex flex-col gap-9">
       <h1>So funktioniert unsere Lieferung</h1>
@@ -85,28 +98,17 @@ export default function Lieferung() {
 
       <div className="flex flex-col gap-5">
         <h2>Bilder</h2>
-        <div className="flex gap-5">
-          <Image
-            src={lieferungImg}
-            alt="Pöllhuber Lieferung"
-            width={1200}
-            height={600}
-            className="rounded-2xl mx-auto mb-6 w-full max-w-5xl h-[300px] object-cover shadow-lg"
-          />
-          <Image
-            src={produktionImg}
-            alt="Pöllhuber Lieferung"
-            width={1200}
-            height={600}
-            className="rounded-2xl mx-auto mb-6 w-full max-w-5xl h-[300px] object-cover shadow-lg"
-          />
-          <Image
-            src={holzImg}
-            alt="Pöllhuber Lieferung"
-            width={1200}
-            height={600}
-            className="rounded-2xl mx-auto mb-6 w-full max-w-5xl h-[300px] object-cover shadow-lg"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {imageList.map((img, index) => (
+            <Image
+              src={img}
+              key={index}
+              alt={`Pöllhuber Lieferung ${img}`}
+              width={1000}
+              height={400}
+              className="rounded-2xl mx-auto w-full max-w-5xl h-[200px] object-cover"
+            />
+          ))}
         </div>
       </div>
       <OrderSteps hasText={false} hasInfoSteps={false} />

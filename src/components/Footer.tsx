@@ -10,7 +10,7 @@ export default function Footer() {
           <p style={{ color: "white" }}>Klaus an der Phyrnbahn 146</p>
           <p style={{ color: "white" }}>4564 Klaus an der Phyrnbahn</p>
           <p style={{ color: "white" }}>Tel: +43 650 9506002</p>
-          <p style={{ color: "white" }}>E-Mail: info@poellhuber-holz.at</p>
+          <p style={{ color: "white" }}>E-Mail: mail@poellhuber-holz.at</p>
         </div>
         <div>
           <h3 className="text-xl font-semibold mb-2" style={{ color: "white" }}>

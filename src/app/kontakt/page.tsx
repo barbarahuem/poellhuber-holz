@@ -16,7 +16,7 @@ export default function Kontakt() {
           <div className="text-left mb-6">
             <h4>Kontakt</h4>
             <p>+43 650 9506002</p>
-            <p>poellhuber.holz@gmail.com</p>
+            <p>mail@poellhuber-holz.at</p>
           </div>
         </div>
 

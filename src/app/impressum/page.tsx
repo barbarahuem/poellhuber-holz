@@ -22,7 +22,7 @@ export default function ImpressumPage() {
       <p>
         <strong>Kontakt:</strong>
         <br />
-        E-Mail: poellhuber.holz@gmail.com
+        E-Mail: mail@poellhuber-holz.at
         <br />
         Tel: +43 650 9506002
       </p>

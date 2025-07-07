@@ -22,7 +22,7 @@ export default function ProductClient({ product }: { product: Product }) {
         />
         <div
           style={{ textAlign: "left" }}
-          className="flex flex-col justify-between"
+          className="flex flex-1 flex-col justify-between"
         >
           <div>
             <h1>{product.name}</h1>
@@ -60,7 +60,10 @@ export default function ProductClient({ product }: { product: Product }) {
         <li>Lieferung: {product.deliveryType}</li>
       </ul>
       <div>
-        <ContactForm product={product.name} quantity={quantity} />
+        <ContactForm product={product.name} quantity={quantity} deliveryType={product.deliveryType}
+          price={(Number(product.price) * quantity)
+            .toFixed(2)
+            .replace(".", ",")} />
       </div>
       <OrderSteps hasText={false} hasInfoSteps={true} />
     </div>

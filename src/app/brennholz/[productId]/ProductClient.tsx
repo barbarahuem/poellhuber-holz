@@ -6,9 +6,33 @@ import QuantitySelector from "@/components/QuantitySelect";
 import OrderSteps from "@/components/OrderSteps";
 import { Product } from "@/types/product";
 import { useEffect, useState } from "react";
+import Gallery from "@/components/Gallery";
+import holzImNetz from "@/assets/holz-im-netz.jpeg";
+import holzImNetzHub from "@/assets/holz-im-netz-hubwagen.jpeg";
+import paletteLieferung from "@/assets/lieferung/palette-lieferung-1.jpeg";
+
+import geschuettet1 from "@/assets/geschuettet/geschuettet-1.jpeg";
+import geschuettet2 from "@/assets/geschuettet/geschuettet-2.jpeg";
+import geschuettet3 from "@/assets/geschuettet/geschuettet-3.jpeg";
+import geschuettet4 from "@/assets/geschuettet/geschuettet-4.jpeg";
+import geschuettet5 from "@/assets/geschuettet/geschuettet-5.jpeg";
 
 export default function ProductPage({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState<number>(product.quantityOptions![0]);
+
+  const imageListProductInNet = [
+    holzImNetz,
+    holzImNetzHub,
+    paletteLieferung
+  ];
+
+  const imageListProductPoured = [
+    geschuettet1,
+    geschuettet2,
+    geschuettet3,
+    geschuettet4,
+    geschuettet5
+  ];
 
   useEffect(() => {
     console.log(
@@ -17,7 +41,7 @@ export default function ProductPage({ product }: { product: Product }) {
   }, [quantity]);
 
   return (
-    <div className="grid gap-10">
+    <div className="grid gap-10 ">
       <div className="flex flex-col md:flex-row gap-5">
         <Image
           src={product.image}
@@ -27,7 +51,7 @@ export default function ProductPage({ product }: { product: Product }) {
           className="rounded-xl"
         />
         <div
-          className="flex flex-col justify-between"
+          className="flex flex-1 flex-col justify-between"
           style={{ textAlign: "left" }}
         >
           <div>
@@ -79,6 +103,7 @@ export default function ProductPage({ product }: { product: Product }) {
             .replace(".", ",")}
         />
       </div>
+      <Gallery imageList={product.deliveryType.includes("lose im Netz") ? imageListProductInNet : imageListProductPoured} />
       <OrderSteps hasText={false} hasInfoSteps={true} />
     </div>
   );

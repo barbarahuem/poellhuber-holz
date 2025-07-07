@@ -1,7 +1,30 @@
-import baggerungIMG from "@/assets/IMG_2778 2.webp";
-import Image from "next/image";
+import Gallery from "@/components/Gallery";
+import pflege1 from "@/assets/pflege/pflege-1.jpeg";
+import pflege2 from "@/assets/pflege/pflege-2.jpeg";
+import pflege3 from "@/assets/pflege/pflege-3.jpeg";
+import pflege4 from "@/assets/pflege/pflege-4.jpeg";
+import pflege5 from "@/assets/pflege/pflege-5.jpeg";
+import pflege6 from "@/assets/pflege/pflege-6.jpeg";
+
+import pflegeVorher from "@/assets/pflege/pflege-vorher.jpeg";
+import pflegeNachher from "@/assets/pflege/pflege-nachher.jpeg";
 
 export default function Baggerungen() {
+
+  const imageList1 = [
+    pflege1,
+    pflege2,
+    pflege3,
+    pflege4,
+    pflege5,
+    pflege6,
+  ];
+
+  const imageList2 = [
+    pflegeVorher,
+    pflegeNachher,
+  ];
+
   return (
     <div className="flex flex-col gap-5">
       <p>
@@ -19,13 +42,8 @@ export default function Baggerungen() {
           <li>Mulcharbeiten</li>
         </ul>
       </div>
-      <Image
-        src={baggerungIMG}
-        alt="Pöllhuber Baggerung"
-        width={1200}
-        height={600}
-        className="rounded-2xl mx-auto mb-6 w-full max-w-5xl h-[300px] object-cover shadow-lg"
-      />
+      <Gallery imageList={imageList1} />
+      <Gallery imageList={imageList2} title="Vorher/Nachher - Böschungspflege" />
     </div>
   );
 }

@@ -22,10 +22,6 @@ export default function OrderSteps({
               Zonen
             </li>
             <li>
-              Kostenfreie Lieferung ab 10 Meter Holz bis Zone 4 (Zonen in 25 km
-              Abständen)
-            </li>
-            <li>
               Flexible Versandberechnung nach Postleitzahlen oder per
               Entfernungsmessung
             </li>

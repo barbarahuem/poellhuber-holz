@@ -20,18 +20,14 @@ import geschuettet5 from "@/assets/geschuettet/geschuettet-5.jpeg";
 export default function ProductPage({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState<number>(product.quantityOptions![0]);
 
-  const imageListProductInNet = [
-    holzImNetz,
-    holzImNetzHub,
-    paletteLieferung
-  ];
+  const imageListProductInNet = [holzImNetz, holzImNetzHub, paletteLieferung];
 
   const imageListProductPoured = [
     geschuettet1,
     geschuettet2,
     geschuettet3,
     geschuettet4,
-    geschuettet5
+    geschuettet5,
   ];
 
   useEffect(() => {
@@ -89,7 +85,20 @@ export default function ProductPage({ product }: { product: Product }) {
         <li>
           Holzart: Buche – bekannt für langanhaltende Glut & hohe Wärmeabgabe
         </li>
-        <li>Länge: {product.length} – passend für die meisten Kamine & Öfen</li>
+        {product.length === "25 cm" && (
+          <li>
+            Länge: {product.length} – passend für die meisten Kamine & Öfen
+          </li>
+        )}
+        {product.length === "33 cm" && (
+          <li>
+            Länge: {product.length} – passend für die meisten Kamine & Öfen
+          </li>
+        )}
+        {product.length === "50 cm" && (
+          <li>Länge: {product.length} – passend für große Öfen</li>
+        )}
+        {product.length === "1 m" && <li>Länge: {product.length}</li>}
         <li>Trocknung: getrocknet unter 20% Feuchtigkeit</li>
         <li>Lieferung: {product.deliveryType}</li>
       </ul>
@@ -103,7 +112,13 @@ export default function ProductPage({ product }: { product: Product }) {
             .replace(".", ",")}
         />
       </div>
-      <Gallery imageList={product.deliveryType.includes("lose im Netz") ? imageListProductInNet : imageListProductPoured} />
+      <Gallery
+        imageList={
+          product.deliveryType.includes("lose im Netz")
+            ? imageListProductInNet
+            : imageListProductPoured
+        }
+      />
       <OrderSteps hasText={false} hasInfoSteps={true} />
     </div>
   );

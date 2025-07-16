@@ -9,7 +9,6 @@ import OrderSteps from "@/components/OrderSteps";
 import Gallery from "@/components/Gallery";
 
 export default function Lieferung() {
-  
   const imageList = [
     lieferungImg,
     produktionImg,

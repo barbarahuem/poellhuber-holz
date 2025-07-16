@@ -10,20 +10,9 @@ import pflegeVorher from "@/assets/pflege/pflege-vorher.jpeg";
 import pflegeNachher from "@/assets/pflege/pflege-nachher.jpeg";
 
 export default function Baggerungen() {
+  const imageList1 = [pflege1, pflege2, pflege3, pflege4, pflege5, pflege6];
 
-  const imageList1 = [
-    pflege1,
-    pflege2,
-    pflege3,
-    pflege4,
-    pflege5,
-    pflege6,
-  ];
-
-  const imageList2 = [
-    pflegeVorher,
-    pflegeNachher,
-  ];
+  const imageList2 = [pflegeVorher, pflegeNachher];
 
   return (
     <div className="flex flex-col gap-5">
@@ -43,7 +32,10 @@ export default function Baggerungen() {
         </ul>
       </div>
       <Gallery imageList={imageList1} />
-      <Gallery imageList={imageList2} title="Vorher/Nachher - Böschungspflege" />
+      <Gallery
+        imageList={imageList2}
+        title="Vorher/Nachher - Böschungspflege"
+      />
     </div>
   );
 }

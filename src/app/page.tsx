@@ -15,13 +15,19 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-9">
       <div className="grid gap-2">
-      <h1>Pöllhuber Brennholz</h1>
-  <h2>Ihr Familienbetrieb für hochwertiges Brennholz, Pellets und Baggerarbeiten</h2>
-  <p>
-    Pöllhuber Brennholz steht für erstklassiges, nachhaltig gewonnenes Brennholz und Pellets aus heimischen Wäldern. 
-    Wir liefern ofenfertiges Brennholz, hochwertige Holzpellets sowie Sonderbestellungen schnell und zuverlässig direkt zu Ihnen nach Hause.
-    Zusätzlich bieten wir Baggerarbeiten für Privat- und Gewerbekunden an – von Mulcharbeiten bis Geländebereinigung.
-  </p>
+        <h1>Pöllhuber Brennholz</h1>
+        <h2>
+          Ihr Familienbetrieb für hochwertiges Brennholz, Pellets und
+          Baggerarbeiten
+        </h2>
+        <p>
+          Pöllhuber Brennholz steht für erstklassiges, nachhaltig gewonnenes
+          Brennholz und Pellets aus heimischen Wäldern. Wir liefern ofenfertiges
+          Brennholz, hochwertige Holzpellets sowie Sonderbestellungen schnell
+          und zuverlässig direkt zu Ihnen nach Hause. Zusätzlich bieten wir
+          Baggerarbeiten für Privat- und Gewerbekunden an – von Mulcharbeiten
+          bis Geländebereinigung.
+        </p>
       </div>
 
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2 md:grid-cols-3">

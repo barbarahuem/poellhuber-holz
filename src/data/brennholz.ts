@@ -5,23 +5,23 @@ export const products: Product[] = [
     id: 1,
     image: "/brennholz.png",
     name: "Buche",
-    price: "118",
+    price: "240",
     unit: "SRM",
     length: "25 cm",
     category: "brennholz",
     deliveryType: "auf Paletten (lose im Netz)",
-    quantityOptions: [1.8, 3.6, 5.4],
+    quantityOptions: [2, 4, 6],
   },
   {
     id: 2,
     image: "/brennholz.png",
     name: "Buche",
-    price: "110",
+    price: "224",
     unit: "SRM",
     length: "33 cm",
     category: "brennholz",
     deliveryType: "auf Paletten (lose im Netz)",
-    quantityOptions: [1.8, 3.6, 5.4],
+    quantityOptions: [2, 4, 6],
   },
   {
     id: 3,
@@ -67,6 +67,4 @@ export const products: Product[] = [
     deliveryType: "lose geschüttet",
     quantityOptions: [3, 4, 5, 6, 7, 8, 9, 10],
   },
-
-
 ];

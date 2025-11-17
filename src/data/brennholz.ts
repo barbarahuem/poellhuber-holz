@@ -1,7 +1,7 @@
 import { Product } from "@/types/product";
 
 export const products: Product[] = [
-  {
+  /*{
     id: 1,
     image: "/brennholz.png",
     name: "Buche",
@@ -22,7 +22,7 @@ export const products: Product[] = [
     category: "brennholz",
     deliveryType: "auf Paletten (lose im Netz)",
     quantityOptions: [2, 4, 6],
-  },
+  },*/
   {
     id: 3,
     image: "/brennholz-geschuettet.jpeg",

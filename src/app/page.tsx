@@ -13,13 +13,12 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-9">
-      <div className="grid gap-2">
-        <h1>Pöllhuber Brennholz</h1>
-        <h2>
+    <div className="flex flex-col gap-12">
+      <div className="grid gap-4">
+        <h1>
           Ihr Familienbetrieb für hochwertiges Brennholz, Pellets und
           Baggerarbeiten
-        </h2>
+        </h1>
         <p>
           Pöllhuber Brennholz steht für erstklassiges, nachhaltig gewonnenes
           Brennholz und Pellets aus heimischen Wäldern. Wir liefern ofenfertiges
@@ -37,7 +36,7 @@ export default function Home() {
             alt="Brennholz Icon"
             width={90}
             height={20}
-            className="justify-center m-auto mb-2"
+            className="justify-center m-auto mb-4"
           />
           <h2>Brennholz</h2>
           <p>
@@ -51,7 +50,7 @@ export default function Home() {
             alt="Pellets Icon"
             width={90}
             height={20}
-            className="justify-center m-auto mb-2"
+            className="justify-center m-auto mb-4"
           />
           <h2>Pellets</h2>
           <p>
@@ -65,7 +64,7 @@ export default function Home() {
             alt="Sonderholz Icon"
             width={90}
             height={20}
-            className="justify-center m-auto mb-3"
+            className="justify-center m-auto mb-5"
           />
           <h2>Sonderbestellung</h2>
           <p>
@@ -139,7 +138,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <div>
+      <div className="grid gap-3 text-center">
         <h2>Baggerungen & Forstdienst</h2>
         <p>
           Wir erledigen auch Erdarbeiten, Böschungspflege und Forsteinsätze rund
@@ -149,7 +148,7 @@ export default function Home() {
 
       <OrderSteps hasText={true} />
 
-      <div className="grid gap-4 text-center">
+      <div className="grid gap-3 text-center">
         <div
           style={{
             display: "flex",

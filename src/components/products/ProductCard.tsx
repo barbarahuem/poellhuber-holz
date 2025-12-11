@@ -12,7 +12,7 @@ export default function ProductCard({ product }: { product: Product }) {
       <Card
         sx={{
           maxWidth: 345,
-          maxHeight: 200,
+          maxHeight: 220,
           borderRadius: "1rem",
           boxShadow: "1px 3px 3px rgba(0, 0, 0, 0.1)",
         }}

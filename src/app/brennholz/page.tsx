@@ -4,7 +4,7 @@ import { products } from "@/data/brennholz";
 
 export default function Brennholz() {
   return (
-    <div className="flex flex-col gap-9">
+    <div className="flex flex-col gap-12">
       <p>
         Unser Brennholz ist ideal für Kamin- und Holzofenbesitzer, die Wert auf
         eine hohe Heizleistung legen. Wir bieten trockenes oder frisches

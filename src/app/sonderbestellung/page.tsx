@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 
 export default function Sonderbestellung() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-5">
       <p>
         Sie benötigen spezielles Holz für besondere Anwendungen? Wir bieten
         verschiedene Holzsorten auf Anfrage an und können Spezialmaße nach

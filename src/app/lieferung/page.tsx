@@ -20,7 +20,7 @@ export default function Lieferung() {
   ];
 
   return (
-    <div className="flex flex-col gap-9">
+    <div className="flex flex-col gap-12">
       <h1>So funktioniert unsere Lieferung</h1>
       <p>
         Ihr Holz wird entweder auf Paletten oder lose geschüttet mit LKW oder

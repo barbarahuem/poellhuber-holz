@@ -21,7 +21,7 @@ const AppTheme = createTheme({
     divider: "#ede3d5",
   },
   typography: {
-    fontFamily: "var(--font-geist-sans), Arial, sans-serif",
+    fontFamily: "var(--font-inter), Arial, sans-serif",
   },
 });
 

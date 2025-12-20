@@ -37,8 +37,8 @@ export default function ProductPage({ product }: { product: Product }) {
   }, [quantity]);
 
   return (
-    <div className="grid gap-10 ">
-      <div className="flex flex-col md:flex-row gap-5">
+    <div className="grid gap-14">
+      <div className="flex flex-col md:flex-row gap-10">
         <Image
           src={product.image}
           alt="Produktbild"
@@ -47,8 +47,7 @@ export default function ProductPage({ product }: { product: Product }) {
           className="rounded-xl"
         />
         <div
-          className="flex flex-1 flex-col justify-between"
-          style={{ textAlign: "left" }}
+          className="flex flex-1 flex-col justify-between text-left"
         >
           <div>
             <h1>
@@ -59,15 +58,13 @@ export default function ProductPage({ product }: { product: Product }) {
           </div>
           <div className="flex flex-col">
             <p
-              style={{ color: "grey", fontSize: "1.3rem" }}
-              className="mt-5 md:mt-0"
+              className="mt-5 md:mt-0 text-gray-500 text-xl"
             >
               {(Number(product.price) * quantity).toFixed(2).replace(".", ",")}{" "}
-              € <span style={{ fontSize: "1rem" }}>Gesamt</span>
+              € <span className="text-base">Gesamt</span>
             </p>
             <p
-              className="item-end mb-3"
-              style={{ color: "grey", fontSize: "0.7rem" }}
+              className="item-end mb-3 text-gray-500 text-xs"
             >
               {product.price} € je {product.unit} exkl. Lieferkosten
             </p>
@@ -87,16 +84,16 @@ export default function ProductPage({ product }: { product: Product }) {
         </li>
         {product.length === "25 cm" && (
           <li>
-            Länge: {product.length} – passend für die meisten Kamine & Öfen
+            Länge: {product.length}, passend für die meisten Kamine & Öfen
           </li>
         )}
         {product.length === "33 cm" && (
           <li>
-            Länge: {product.length} – passend für die meisten Kamine & Öfen
+            Länge: {product.length}, passend für die meisten Kamine & Öfen
           </li>
         )}
         {product.length === "50 cm" && (
-          <li>Länge: {product.length} – passend für große Öfen</li>
+          <li>Länge: {product.length}, passend für große Öfen</li>
         )}
         {product.length === "1 m" && <li>Länge: {product.length}</li>}
         <li>Trocknung: getrocknet unter 20% Feuchtigkeit</li>

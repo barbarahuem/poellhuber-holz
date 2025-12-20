@@ -14,7 +14,7 @@ export default function OrderSteps({
   return (
     <>
       {hasInfoSteps && (
-        <div className="grid gap-2">
+        <div className="grid gap-5">
           <h3 className="text-left">So funktioniert die Lieferung</h3>
           <ul className="list-disc text-left ml-3">
             <li>
@@ -33,7 +33,7 @@ export default function OrderSteps({
         style={{ color: "white" }}
       >
         {hasText && (
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center gap-5">
             <h2 style={{ color: "white" }}>Bestellen leicht gemacht!</h2>
             <p style={{ color: "white" }}>
               Sie möchten Brennholz bestellen? Schicken Sie uns einfach eine
@@ -46,7 +46,7 @@ export default function OrderSteps({
         <p className="font-bold" style={{ color: "white" }}>
           So funktionierts:
         </p>
-        <div className="flex flex-col md:flex-row gap-2 items-center">
+        <div className="flex flex-col md:flex-row gap-3 items-center">
           <div className="flex flex-col items-center gap-2 p-2 border-2 border-stroke rounded-xl h-full w-full">
             <EmailOutlinedIcon />
             <p style={{ color: "white" }}>Schicken Sie uns Ihre Anfrage</p>

@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 
 export default function Kontakt() {
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <div className="text-left mb-6">

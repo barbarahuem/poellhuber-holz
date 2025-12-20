@@ -15,13 +15,15 @@ export default function Baggerungen() {
   const imageList2 = [pflegeVorher, pflegeNachher];
 
   return (
-    <div className="flex flex-col gap-5">
-      <p>
-        Neben unserem Brennholzverkauf bieten wir auch Bagger- und
-        Forstdienstleistungen an. Ob im Garten, rund ums Haus oder im Wald — wir
-        unterstützen schnell und zuverlässig.
-      </p>
-      <p>Einfach telefonisch unter +436509506002 anfragen.</p>
+    <div className="flex flex-col gap-12">
+      <div>
+        <p>
+          Neben unserem Brennholzverkauf bieten wir auch Bagger- und
+          Forstdienstleistungen an. Ob im Garten, rund ums Haus oder im Wald. Wir
+          unterstützen schnell und zuverlässig!
+        </p>
+        <p className="mt-5">Einfach telefonisch unter +436509506002 anfragen.</p>
+      </div>
       <div>
         <h3 className="text-left">Unsere Leistungen:</h3>
         <ul className="list-disc text-left ml-3">

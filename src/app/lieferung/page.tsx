@@ -21,13 +21,14 @@ export default function Lieferung() {
 
   return (
     <div className="flex flex-col gap-12">
+      <div className="grid gap-5">
       <h1>So funktioniert unsere Lieferung</h1>
       <p>
         Ihr Holz wird entweder auf Paletten oder lose geschüttet mit LKW oder
         Anhänger geliefert. Unsere Videos und Bilder zeigen Ihnen, wie die
         Lieferung abläuft und welche Verpackungsoptionen zur Verfügung stehen.
       </p>
-
+      </div>
       <div className="flex flex-col gap-5">
         <h2>Unser Versand fair & transparent</h2>
         <div>

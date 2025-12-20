@@ -94,11 +94,11 @@ export default function ContactForm({
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
       {hasText && (
         <>
           <h3 className="text-left mt-1">Anfragen</h3>
-          <p className="text-left">
+          <p className="text-left mb-3">
             Sie erreichen uns telefonisch unter +436509506002 oder mit
             nachstehendem E-Mail Formular:
           </p>
@@ -260,7 +260,7 @@ export default function ContactForm({
         variant="contained"
         color="primary"
         disabled={isLoading}
-        sx={{ width: { xs: "100%", sm: "50%" }, height: "50px", mx: "auto" }}
+        sx={{ width: { xs: "100%", sm: "50%" }, height: "50px", mx: "auto", marginTop: 2 }}
       >
         {isLoading ? (
           <CircularProgress size={24} color="inherit" />
@@ -270,7 +270,7 @@ export default function ContactForm({
       </Button>
 
       {hasText && (
-        <p className="text-center text-sm text-gray-500">
+        <p className="text-center text-sm text-gray-500 mt-3">
           Nach Erhalt der Anfrage kümmern wir uns um Ihr Anliegen und melden uns
           mit einem Angebot zurück.
         </p>

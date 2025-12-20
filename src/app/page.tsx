@@ -13,32 +13,37 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-12">
-      <div className="grid gap-4">
-        <h1>
-          Ihr Familienbetrieb für hochwertiges Brennholz, Pellets und
-          Baggerarbeiten
-        </h1>
+    <div className="flex flex-col gap-20">
+      <div className="grid gap-5">
+        <div className="grid gap-2">
+          <h1>
+            Pöllhuber Holz
+          </h1>
+          <h2>
+            Ihr Familienbetrieb für hochwertiges Brennholz, Pellets und
+            Baggerarbeiten
+          </h2>
+        </div>
         <p>
           Pöllhuber Brennholz steht für erstklassiges, nachhaltig gewonnenes
           Brennholz und Pellets aus heimischen Wäldern. Wir liefern ofenfertiges
           Brennholz, hochwertige Holzpellets sowie Sonderbestellungen schnell
           und zuverlässig direkt zu Ihnen nach Hause. Zusätzlich bieten wir
-          Baggerarbeiten für Privat- und Gewerbekunden an – von Mulcharbeiten
+          Baggerarbeiten für Privat- und Gewerbekunden an. Diese reichen von Mulcharbeiten
           bis Geländebereinigung.
         </p>
       </div>
 
-      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 md:grid-cols-3">
+      <div className="grid gap-5 grid-cols-1 md:grid-cols-2 md:grid-cols-3">
         <div>
           <Image
             src={brennholzIcon}
             alt="Brennholz Icon"
             width={90}
             height={20}
-            className="justify-center m-auto mb-4"
+            className="justify-center m-auto mb-5"
           />
-          <h2>Brennholz</h2>
+          <h2 className="mb-2">Brennholz</h2>
           <p>
             Lose geschüttetes oder auf Paletten geliefertes Buchenholz, Trocken
             oder frisch in verschiedenen Längen (25 cm, 33 cm, 50 cm, 1 m)
@@ -50,9 +55,9 @@ export default function Home() {
             alt="Pellets Icon"
             width={90}
             height={20}
-            className="justify-center m-auto mb-4"
+            className="justify-center m-auto mb-5"
           />
-          <h2>Pellets</h2>
+          <h2 className="mb-2">Pellets</h2>
           <p>
             Hochwertige Holzpellets für effizientes Heizen Lieferung in
             handlichen Einheiten
@@ -64,9 +69,9 @@ export default function Home() {
             alt="Sonderholz Icon"
             width={90}
             height={20}
-            className="justify-center m-auto mb-5"
+            className="justify-center m-auto mb-6"
           />
-          <h2>Sonderbestellung</h2>
+          <h2 className="mb-2">Sonderbestellung</h2>
           <p>
             Verschiedene Holzsorten auf Anfrage Spezialmaße und individuelle
             Bestellungen möglich
@@ -74,7 +79,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full">
         {/* Left column - full height image */}
         <Link
           href="/brennholz"

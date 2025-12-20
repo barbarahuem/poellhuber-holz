@@ -5,7 +5,7 @@ import OrderSteps from "@/components/OrderSteps";
 
 export default function Pellets() {
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-20">
       <p>
         Unsere hochwertigen Holzpellets sind die perfekte Wahl für effizientes
         und umweltfreundliches Heizen. Sie bestehen aus gepressten Holzspänen

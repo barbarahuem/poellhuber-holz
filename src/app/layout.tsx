@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { Wrapper } from "./wrapper";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -26,9 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${inter.variable} ${geistMono.variable}`}>
         <Wrapper>
-          <main className="flex flex-col items-center m-auto text-center justify-center p-10 max-w-4xl">
+          <main className="flex flex-col items-center m-auto text-center justify-center p-10 pb-24 max-w-4xl">
             {children}
           </main>
         </Wrapper>

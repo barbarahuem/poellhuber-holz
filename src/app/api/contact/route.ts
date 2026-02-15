@@ -22,17 +22,21 @@ export async function POST(request: Request) {
   } = data;
 
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: process.env.SMTP_HOST,
+    port: 465,
+    secure: true,
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+    tls: {
+      rejectUnauthorized: false,
     },
   });
-
   try {
     await transporter.sendMail({
       from: email,
-      to: process.env.EMAIL_USER,
+      to: process.env.EMAIL_RECEIVER,
       subject: "Neue Anfrage über das Formular",
       html: `
         <h2>Neue Kontaktanfrage</h2>
@@ -62,7 +66,7 @@ export async function POST(request: Request) {
     });
 
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+      from: process.env.SMTP_USER,
       to: email,
       subject: "Bestätigung: Ihre Anfrage ist eingegangen",
       html: `

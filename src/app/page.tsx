@@ -16,9 +16,7 @@ export default function Home() {
     <div className="flex flex-col gap-20">
       <div className="grid gap-5">
         <div className="grid gap-2">
-          <h1>
-            Pöllhuber Holz
-          </h1>
+          <h1>Pöllhuber Holz</h1>
           <h2>
             Ihr Familienbetrieb für hochwertiges Brennholz, Pellets und
             Baggerarbeiten
@@ -29,8 +27,8 @@ export default function Home() {
           Brennholz und Pellets aus heimischen Wäldern. Wir liefern ofenfertiges
           Brennholz, hochwertige Holzpellets sowie Sonderbestellungen schnell
           und zuverlässig direkt zu Ihnen nach Hause. Zusätzlich bieten wir
-          Baggerarbeiten für Privat- und Gewerbekunden an. Diese reichen von Mulcharbeiten
-          bis Geländebereinigung.
+          Baggerarbeiten für Privat- und Gewerbekunden an. Diese reichen von
+          Mulcharbeiten bis Geländebereinigung.
         </p>
       </div>
 

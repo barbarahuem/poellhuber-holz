@@ -46,9 +46,7 @@ export default function ProductPage({ product }: { product: Product }) {
           height={300}
           className="rounded-xl"
         />
-        <div
-          className="flex flex-1 flex-col justify-between text-left"
-        >
+        <div className="flex flex-1 flex-col justify-between text-left">
           <div>
             <h1>
               {product.name}, {product.length}
@@ -57,15 +55,11 @@ export default function ProductPage({ product }: { product: Product }) {
             <p>{product.deliveryType}</p>
           </div>
           <div className="flex flex-col">
-            <p
-              className="mt-5 md:mt-0 text-gray-500 text-xl"
-            >
+            <p className="mt-5 md:mt-0 text-gray-500 text-xl">
               {(Number(product.price) * quantity).toFixed(2).replace(".", ",")}{" "}
               € <span className="text-base">Gesamt</span>
             </p>
-            <p
-              className="item-end mb-3 text-gray-500 text-xs"
-            >
+            <p className="item-end mb-3 text-gray-500 text-xs">
               {product.price} € je {product.unit} exkl. Lieferkosten
             </p>
 

@@ -54,12 +54,6 @@ export default function ContactForm({
   const [hasError, setHasError] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
 
-  useEffect(() => {
-    setValue("product", product || "");
-    setValue("quantity", quantity || 1);
-    setValue("deliveryType", deliveryType || "");
-    setValue("price", price || "");
-  }, [product, quantity, price, deliveryType, setValue]);
 
   const onFocus = () => {
     if (isFinished) {
@@ -260,7 +254,12 @@ export default function ContactForm({
         variant="contained"
         color="primary"
         disabled={isLoading}
-        sx={{ width: { xs: "100%", sm: "50%" }, height: "50px", mx: "auto", marginTop: 2 }}
+        sx={{
+          width: { xs: "100%", sm: "50%" },
+          height: "50px",
+          mx: "auto",
+          marginTop: 2,
+        }}
       >
         {isLoading ? (
           <CircularProgress size={24} color="inherit" />

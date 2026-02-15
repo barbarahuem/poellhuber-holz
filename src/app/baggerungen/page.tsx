@@ -19,10 +19,12 @@ export default function Baggerungen() {
       <div>
         <p>
           Neben unserem Brennholzverkauf bieten wir auch Bagger- und
-          Forstdienstleistungen an. Ob im Garten, rund ums Haus oder im Wald. Wir
-          unterstützen schnell und zuverlässig!
+          Forstdienstleistungen an. Ob im Garten, rund ums Haus oder im Wald.
+          Wir unterstützen schnell und zuverlässig!
         </p>
-        <p className="mt-5">Einfach telefonisch unter +436509506002 anfragen.</p>
+        <p className="mt-5">
+          Einfach telefonisch unter +436509506002 anfragen.
+        </p>
       </div>
       <div>
         <h3 className="text-left">Unsere Leistungen:</h3>

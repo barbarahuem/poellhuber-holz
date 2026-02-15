@@ -26,7 +26,7 @@ export default function Navbar() {
   return (
     <nav className="relative">
       <div className="bg-secondary flex justify-end p-3 space-x-6 text-sm hidden md:flex">
-        <p style={{ color: "white" }}>+43 650 9506002</p>
+        <p style={{ color: "white" }}>+43 7585 20069</p>
         <p style={{ color: "white" }}>mail@poellhuber-holz.com</p>
       </div>
 

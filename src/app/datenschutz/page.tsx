@@ -53,7 +53,7 @@ export default function DatenschutzPage() {
         4564 Klaus an der Phyrnbahn <br />
         E-Mail: mail@poellhuber-holz.at
         <br />
-        Tel: +43 650 9506002
+        Tel: +43 7585 20069
       </p>
     </div>
   );

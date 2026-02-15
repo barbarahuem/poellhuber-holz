@@ -99,7 +99,7 @@ export default function ContactForm({
         <>
           <h3 className="text-left mt-1">Anfragen</h3>
           <p className="text-left mb-3">
-            Sie erreichen uns telefonisch unter +436509506002 oder mit
+            Sie erreichen uns telefonisch unter +43 7585 20069 oder mit
             nachstehendem E-Mail Formular:
           </p>
         </>
